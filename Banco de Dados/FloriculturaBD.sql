@@ -38,9 +38,24 @@ CREATE TABLE compra(
 #início de inserção de dados
 
 INSERT INTO plantas(nomePlanta, tipoPlanta, imgPlanta, estoquePlanta)
-VALUES (‘Copo de Leite’, ‘Flor’, ‘cdl.png’, ‘50’)
-   (‘Pé de Laranja Lima’, ‘Árvore’, ‘pdll.jpeg’, ‘35’)
+VALUES (‘Copo de Leite’, ‘Flor’, ‘cdl.png’, ‘50’),
+		(‘Pé de Laranja Lima’, ‘Árvore’, ‘pdll.jpeg’, ‘35’);
+
 
 INSERT INTO produtos (nomeProdutos, estoqueProdutos, tipoProdutos, imgProdutos)
 VALUES (‘Vaso de ceramica amarelo’, 7, ‘Vaso’, ‘vasoyellow.png’),
-	   (‘Adubo com minhoca’, 4, ‘Adubo’, ‘adub.png’)
+	   (‘Adubo com minhoca’, 4, ‘Adubo’, ‘adub.png’);
+
+
+INSERT INTO cadastroUsuario(codUsuario, nomeUsuario, email, senha, dataNasc, CPF, genero, telefone)
+	VALUES (‘Adm’, ‘adm@gmail.com’, ’123’, ‘1999-11-01’, ‘11111111111’, ‘N’, ‘47999999999’),
+   (‘Marcela Leite’, ‘marcela.leite@ifc.edu.br’, ’123456’, ‘’, ‘22222222222’, ‘F’, ‘47988776655’);
+
+
+INSERT INTO compra(nomeCliente, cpfCliente, nomeProdutos, nomePlanta, formaPagamento)
+	VALUES (‘Laura Campestre’, ‘07898507423’, ‘Vaso de cerâmica’, ‘Cartão’),
+		    (‘Rodrigo Romano’, ‘23564128712’, ‘Cacto’, ‘Dinheiro’);
+
+INSERT INTO administrador(CodUsuario)
+VALUES(1),
+	  (2);
