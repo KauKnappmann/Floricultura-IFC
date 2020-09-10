@@ -1,7 +1,17 @@
+
 /* Estilo de css */
-/* Tabela de Cores principais:
-#0D0D0D
-#BFBFBD
-#41A664
-#2C7345
-#4BBF7D */
+/* Tabela de Cores principais:*/
+
+#cores{
+color: #0D0D0D;
+color: #BFBFBD;
+color: #41A664;
+color: #2C7345;
+color: #4BBF7D ;
+}
+.navbar{
+background-color:#4BBF7D ;
+}
+.page-footer{
+    background-color:#BFBFBD;
+}
