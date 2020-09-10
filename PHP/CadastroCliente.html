@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+
+    <meta charset="utf-8">
+    <title>Cadastro Cliente</title>
+
+    <!-- para prevalecer o meu -->
+    <link rel="stylesheet" href="css/estilo.css">
+  </head>
+  <body class="container">
+    <div class="row">
+      <div class="col s12 l12 m12">
+        <h1>Cadastro Cliente</h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12 l12 m12">
+        <form class="" action="CadastroCliente.php" method="POST">
+          <fieldset>
+            <div class="row">
+              <div class="col s12 l4 m4">
+                <label for="nome">Nome:</label>
+                <input type="text" name="nomeUsuario" value="{nomeUsuario}">
+              </div>
+              <div class="col s12 l4 m4">
+                <label for="email">E-mail:</label>
+                <input type="text" name="email" value="{email}">
+              </div>
+              <div class="col s12 l4 m4">
+                <label for="senha">Senha:</label>
+                <input type="text" name="senha" value="{senha}">
+              </div>
+              <div class="col s12 l4 m4">
+                <label for="dataNasc">Data de Nascimento:</label>
+                <input type="text" name="dataNasc" value="{dataNasc}">
+              </div>
+              <div class="col s12 l4 m4">
+                <label for="CPF">CPF:</label>
+                <input type="text" name="CPF" value="{CPF}">
+              </div>
+              <div class="col s12 l4 m4">
+                <label for="CPF">CPF:</label>
+                <input type="text" name="CPF" value="{CPF}">
+              </div>
+              <!-- Aqui precisa ser um select, mas não sei fazer select no estilo que a marcela programa -->
+              <div class="col s12 l4 m4"> 
+                <label for="genero">Gênero:</label>
+                <input type="text" name="genero" value="{genero}">
+              </div>
+              <div class="col s12 l4 m4">
+                <label for="telefone">Telefone:</label>
+                <input type="text" name="telefone" value="{telefone}">
+              </div>
+            </div>
+            <input type="hidden" name="codUsuario" value="{codUsuario}">
+            <input type="submit" value="Enviar">
+
+
+          </fieldset>
+        </form>
+      </div>
+    </div>
+
+  </body>
+</html>
