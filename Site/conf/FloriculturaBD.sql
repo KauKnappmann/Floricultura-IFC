@@ -32,6 +32,15 @@ VALUES ('Adm', 'adm@gmail.com', '123', '1999-11-01', '11111111111', 'N', '479999
 
 SELECT * FROM cadastroUsuario;
 
+CREATE TABLE administrador (
+	codAdmin int AUTO_INCREMENT PRIMARY KEY,
+    codUsuario int,
+    FOREIGN KEY (codUsuario) REFERENCES cadastroUsuario(codUsuario)
+);
+
+INSERT INTO administrador(codUsuario)
+VALUES(1);
+
 CREATE TABLE compra(
 	codCompra INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	nomeCliente VARCHAR(50),   
@@ -57,6 +66,4 @@ INSERT INTO compra(nomeCliente, cpfCliente, nomeProdutos, nomePlanta, formaPagam
 	VALUES (‘Laura Campestre’, ‘07898507423’, ‘Vaso de cerâmica’, ‘Cartão’),
 		    (‘Rodrigo Romano’, ‘23564128712’, ‘Cacto’, ‘Dinheiro’);
 
-INSERT INTO administrador(CodUsuario)
-VALUES(1),
-	  (2);
+
