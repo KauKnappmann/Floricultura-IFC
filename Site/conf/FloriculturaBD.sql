@@ -26,6 +26,11 @@ CREATE TABLE cadastroUsuario(
 	CPF VARCHAR(11),
 	genero VARCHAR (20),
 	telefone VARCHAR(20));
+    
+INSERT INTO cadastroUsuario(nomeUsuario, email, senha, dataNasc, CPF, genero, telefone)
+VALUES ('Adm', 'adm@gmail.com', '123', '1999-11-01', '11111111111', 'N', '47999999999');
+
+SELECT * FROM cadastroUsuario;
 
 CREATE TABLE compra(
 	codCompra INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -46,10 +51,6 @@ INSERT INTO produtos (nomeProdutos, estoqueProdutos, tipoProdutos, imgProdutos)
 VALUES (‘Vaso de ceramica amarelo’, 7, ‘Vaso’, ‘vasoyellow.png’),
 	   (‘Adubo com minhoca’, 4, ‘Adubo’, ‘adub.png’);
 
-
-INSERT INTO cadastroUsuario(codUsuario, nomeUsuario, email, senha, dataNasc, CPF, genero, telefone)
-	VALUES (‘Adm’, ‘adm@gmail.com’, ’123’, ‘1999-11-01’, ‘11111111111’, ‘N’, ‘47999999999’),
-   (‘Marcela Leite’, ‘marcela.leite@ifc.edu.br’, ’123456’, ‘’, ‘22222222222’, ‘F’, ‘47988776655’);
 
 
 INSERT INTO compra(nomeCliente, cpfCliente, nomeProdutos, nomePlanta, formaPagamento)
