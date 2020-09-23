@@ -69,7 +69,7 @@ a {
 .form-control {
   height: 43px; }
   .form-control:active, .form-control:focus {
-    border-color: #135c2c; }
+    border-color: #07f562; }
   .form-control:hover, .form-control:active, .form-control:focus {
     -webkit-box-shadow: none !important;
     box-shadow: none !important; }
@@ -93,7 +93,7 @@ a {
     position: absolute;
     width: 40px;
     height: 2px;
-    background: #135c2c; }
+    background: #07f562; }
   .site-section-heading.text-center:before {
     content: "";
     left: 50%;
@@ -104,7 +104,7 @@ a {
     position: absolute;
     width: 40px;
     height: 2px;
-    background: #135c2c; }
+    background: #07f562; }
 
 .border-top {
   border-top: 1px solid #edf0f5 !important; }
@@ -116,7 +116,7 @@ a {
     .site-footer ul li a {
       color: #5c626e; }
       .site-footer ul li a:hover {
-        color: #135c2c; }
+        color: #07f562; }
   .site-footer .footer-heading {
     font-size: 14px;
     color: #25262a;
@@ -181,7 +181,7 @@ a {
   .site-navbar .site-search-icon a:hover {
     text-decoration: none; }
   .site-navbar a {
-    color: #868995; }
+    color:#3d3f45; }
     .site-navbar a:hover {
       color: #3d3f45; }
   .site-navbar .icon {
@@ -210,7 +210,7 @@ a {
           border-radius: 50%;
           display: block;
           text-align: center;
-          background: #135c2c;
+          background: #07f562;
           color: #fff;
           -webkit-transition: .2s all ease-in-out;
           -o-transition: .2s all ease-in-out;
@@ -228,7 +228,7 @@ a {
     padding-left: 0;
     margin-bottom: 0; }
     .site-navbar .site-navigation .site-menu .active > a {
-      color: #135c2c; }
+      color: #07f562; }
     .site-navbar .site-navigation .site-menu a {
       text-decoration: none !important;
       font-size: 15px;
@@ -244,7 +244,7 @@ a {
         font-size: 15px;
         text-decoration: none !important; }
         .site-navbar .site-navigation .site-menu > li > a:hover {
-          color: #135c2c; }
+          color: #07f562; }
     .site-navbar .site-navigation .site-menu .has-children {
       position: relative; }
       .site-navbar .site-navigation .site-menu .has-children > a {
@@ -266,7 +266,7 @@ a {
         top: 100%;
         position: absolute;
         text-align: left;
-        border-top: 2px solid #135c2c;
+        border-top: 2px solid #07f562;
         -webkit-box-shadow: 0 0px 4px 0px rgba(0, 0, 0, 0.05);
         box-shadow: 0 0px 4px 0px rgba(0, 0, 0, 0.05);
         border-left: 1px solid #edf0f5;
@@ -287,7 +287,7 @@ a {
           -o-transition: 0s all;
           transition: 0s all; }
         .site-navbar .site-navigation .site-menu .has-children .dropdown .active > a {
-          color: #135c2c !important; }
+          color: #07f562 !important; }
         .site-navbar .site-navigation .site-menu .has-children .dropdown > li {
           list-style: none;
           padding: 0;
@@ -311,7 +311,7 @@ a {
       .site-navbar .site-navigation .site-menu .has-children a {
         text-transform: uppercase; }
       .site-navbar .site-navigation .site-menu .has-children:hover > a, .site-navbar .site-navigation .site-menu .has-children:focus > a, .site-navbar .site-navigation .site-menu .has-children:active > a {
-        color: #135c2c; }
+        color: #07f562; }
       .site-navbar .site-navigation .site-menu .has-children:hover, .site-navbar .site-navigation .site-menu .has-children:focus, .site-navbar .site-navigation .site-menu .has-children:active {
         cursor: pointer; }
         .site-navbar .site-navigation .site-menu .has-children:hover > .dropdown, .site-navbar .site-navigation .site-menu .has-children:focus > .dropdown, .site-navbar .site-navigation .site-menu .has-children:active > .dropdown {
@@ -396,12 +396,12 @@ a {
       position: relative;
       color: #212529; }
       .site-mobile-menu .site-nav-wrap a:hover {
-        color: #135c2c; }
+        color: #07f562; }
     .site-mobile-menu .site-nav-wrap li {
       position: relative;
       display: block; }
       .site-mobile-menu .site-nav-wrap li.active > a {
-        color: #135c2c; }
+        color: #07f562; }
     .site-mobile-menu .site-nav-wrap .arrow-collapse {
       position: absolute;
       right: 0px;
@@ -523,7 +523,7 @@ a {
       display: none; }
   .site-blocks-1 .icon span {
     position: relative;
-    color: #135c2c;
+    color: #07f562;
     top: -10px;
     font-size: 50px;
     display: inline-block; }
@@ -631,7 +631,7 @@ a {
     left: 0;
     font-size: 20px;
     line-height: 1;
-    color: #135c2c; }
+    color: #07f562; }
   .block-5 ul li.address:before {
     content: "\e8b4"; }
   .block-5 ul li.email:before {
@@ -687,7 +687,7 @@ a {
     vertical-align: middle;
     color: #212529; }
   .site-blocks-table tbody tr:first-child td {
-    border-top: 1px solid #135c2c !important; }
+    border-top: 1px solid #07f562 !important; }
 
 .site-block-order-table th {
   border-top: none !important;
@@ -729,7 +729,7 @@ a {
     border-radius: 50%;
     border: 1px solid #ccc; }
   .site-block-27 ul li.active a, .site-block-27 ul li.active span {
-    background: #135c2c;
+    background: #07f562;
     color: #fff;
     border: 1px solid transparent; }
 
@@ -740,11 +740,11 @@ a {
     height: 16px;
     border-radius: 50%;
     border: none !important;
-    background: #135c2c; }
+    background: #07f562; }
     #slider-range .ui-slider-handle:focus, #slider-range .ui-slider-handle:active {
       outline: none; }
   #slider-range .ui-slider-range {
-    background-color: #135c2c; }
+    background-color: #07f562; }
 
 .color-item .color {
   width: 14px;
@@ -804,7 +804,7 @@ a {
     line-height: 20px;
     color: #fff;
     font-size: 12px;
-    background: #135c2c;
+    background: #07f562;
     right: -10px; }
 
 .search-wrap {
@@ -853,7 +853,7 @@ a {
 
 .title-section h2 {
   padding-left: 30px;
-  border-left: 4px solid #135c2c;
+  border-left: 4px solid #07f562;
   display: inline-block;
   color: #000; }
 
@@ -871,7 +871,7 @@ a {
     transform: translateX(-50%);
     width: 70px;
     height: 4px;
-    background: #135c2c;
+    background: #07f562;
     content: ""; }
 
 .product-item {
