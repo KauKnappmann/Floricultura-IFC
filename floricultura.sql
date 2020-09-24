@@ -10,6 +10,18 @@ imgPlanta VARCHAR(100),
 estoquePlanta VARCHAR(100)
 );
 
+CREATE TABLE Usuario(
+	codUsuario INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	nomeUsuario VARCHAR(50),
+	email VARCHAR(100),
+	senha VARCHAR(12),
+	dataNasc DATE,
+	CPF VARCHAR(11),
+	genero VARCHAR (20),
+	telefone VARCHAR(20));
+    
+    select * from Usuario;
+
 
 CREATE TABLE produtos(
 codProdutos INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
