@@ -159,11 +159,11 @@ a {
     position: relative; }
 
 .site-navbar {
-  background:#41A664;
+  background:#f5f5f5;
   margin-bottom: 0px;
   z-index: 1999;
   position: relative;
-  background: #41A664 !important; }
+  background: #f5f5f5 !important; }
   .site-navbar.transparent {
     background: transparent; }
   .site-navbar .site-navbar-top {
