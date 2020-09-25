@@ -17,7 +17,7 @@
 
           self::$pdo = new PDO(DRIVER.
                                ":host=" . HOST . 
-                               "; dbname=" . DBNAME . 
+                               "; dbname=" . DB_NAME . 
                                "; charset=" . CHARSET . 
                                ";", USER, PASSWORD, 
                                $opcoes);  
