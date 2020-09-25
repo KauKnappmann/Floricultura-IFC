@@ -5,7 +5,7 @@
 try{
 include_once "../conf/Conexao.php";
 //echo "estou sentindo uma conexão entre nós";
-} catch(Exeption $e){
+} catch(Exception $e){
     echo "Erro: ". $e->getMessage();
 }
 
