@@ -2,7 +2,7 @@
 
     // Banco de Dados
     define('HOST', '200.135.58.18');
-    define('DB_NAME', 'neTree');    
+    define('DB_NAME', 'equipe3');    
     define('USER', 'equipe3');
     define('PASSWORD', 'Equipe03.');
 
