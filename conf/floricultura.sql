@@ -1,6 +1,6 @@
-CREATE DATABASE neTree;
-USE neTree;
-DROP DATABASE neTree;
+CREATE DATABASE equipe3;
+USE equipe3;
+DROP DATABASE equipe3;
 
 CREATE TABLE plantas(
 codPlanta INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -30,16 +30,6 @@ estoqueProdutos INT,
 tipoProdutos VARCHAR(50),
 imgProdutos VARCHAR(100));
 
-CREATE TABLE cadastroUsuario(
-	codUsuario INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	nomeUsuario VARCHAR(50),
-	email VARCHAR(100),
-	senha CHAR,
-	dataNasc DATE,
-	CPF VARCHAR(11),
-	genero VARCHAR (20),
-	telefone VARCHAR(20));
-
 CREATE TABLE compra(
 	codCompra INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	nomeCliente VARCHAR(50),   
@@ -47,9 +37,14 @@ CREATE TABLE compra(
 	nomeProdutos VARCHAR (50),
 	nomePlanta VARCHAR (50),
 	formaPagamento VARCHAR(50));
+    
+CREATE TABLE administrador(
+	codAdmin INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    codUsuario INT,
+    FOREIGN KEY (codUsuario) REFERENCES Usuario(codUsuario)
+);
 	
 #início de inserção de dados
-
 
 INSERT INTO plantas(nomePlanta, tipoPlanta, imgPlanta, estoquePlanta)
 VALUES('Copo de Leite', 'Flor', 'cp.png', 2),
@@ -81,18 +76,18 @@ SELECT * FROM plantas;
 
 
 INSERT INTO produtos (nomeProdutos, estoqueProdutos, tipoProdutos, imgProdutos)
-VALUES (‘Vaso de ceramica amarelo’, 7, ‘Vaso’, ‘vasoyellow.png’),
-	   (‘Adubo com minhoca’, 4, ‘Adubo’, ‘adub.png’);
+VALUES ('Vaso de ceramica amarelo', 7, 'Vaso', 'vasoyellow.png'),
+	   ('Adubo com minhoca', 4, 'Adubo', 'adub.png');
 
 
-INSERT INTO cadastroUsuario(codUsuario, nomeUsuario, email, senha, dataNasc, CPF, genero, telefone)
-	VALUES (‘Adm’, ‘adm@gmail.com’, ’123’, ‘1999-11-01’, ‘11111111111’, ‘N’, ‘47999999999’),
-   (‘Marcela Leite’, ‘marcela.leite@ifc.edu.br’, ’123456’, ‘’, ‘22222222222’, ‘F’, ‘47988776655’);
+INSERT INTO Usuario(nomeUsuario, email, senha, dataNasc, CPF, genero, telefone)
+	VALUES ('Adm', 'adm@gmail.com', '123', '1999-11-01', '11111111111', 'N', '47999999999'),
+   ('Marcela Leite', 'marcela.leite@ifc.edu.br', '123456', '1983-11-02', '22222222222', 'F', '47988776655');
 
 
 INSERT INTO compra(nomeCliente, cpfCliente, nomeProdutos, nomePlanta, formaPagamento)
-	VALUES (‘Laura Campestre’, ‘07898507423’, ‘Vaso de cerâmica’, ‘Cartão’),
-		    (‘Rodrigo Romano’, ‘23564128712’, ‘Cacto’, ‘Dinheiro’);
+	VALUES ('Laura Campestre', '07898507423', 'Vaso de cerâmica', 'Cacto', 'Cartão'),
+		    ('Rodrigo Romano', '23564128712', 'Terra vegetal', 'Cacto', 'Dinheiro');
 
 INSERT INTO administrador(CodUsuario)
 VALUES(1),
