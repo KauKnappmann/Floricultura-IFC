@@ -1,10 +1,10 @@
 <?php
 
     // Banco de Dados
-    define('HOST', 'localhost');
+    define('HOST', '200.135.58.18');
     define('DB_NAME', 'neTree');    
-    define('USER', 'root');
-    define('PASSWORD', '');
+    define('USER', 'equipe3');
+    define('PASSWORD', 'Equipe03.');
 
 
 
