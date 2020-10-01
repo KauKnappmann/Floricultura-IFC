@@ -12,6 +12,7 @@
     
     switch($do){
     
+        //cadastro comum de planta
          case 0:
 
          $query = "SELECT * FROM tipoPlanta;";
@@ -32,13 +33,6 @@
          file_put_contents("PlantaType.html", $option);
 
          header("local:PlantaType.html");
-
-         //echo(str_replace("teste",$option, $page));
-
-//          $contents = file_get_contents ("step-second-test.php");
-
-// $contents = str_replace(array("7NT0j5dB2QMyWv96nXIDgaR4PJ"), generateRandomString($length = 26), $contents);
-// file_put_contents("step-second-test.php", $contents);
 
          break; 
         
@@ -68,7 +62,7 @@
 
              break;
 
-
+             //cadastro comum de tipo de planta
              case 2:
 
                 $nome = $_POST['nome'];
@@ -82,6 +76,12 @@
                 $stmt->bindParam(':descricao',$descricao, PDO::PARAM_STR);
 
                 $stmt->execute();
+
+             break;
+
+             case 3: 
+
+                
 
              break;
     
