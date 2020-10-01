@@ -39,29 +39,38 @@ Class User{
 
    public function cadastro($nome,$email,$senha,$dataNasc,$CPF,$genero,$telefone){
 
-    $sql = 'INSERT INTO Usuario(nomeUsuario,email,senha,dataNasc,CPF,genero,telefone) 
-    VALUES(:nomeUsuario,:email,:senha,:dataNasc,:CPF,:genero,:telefone)';
-
-    $stmt = $this->pdo->prepare($sql);
-
-    $stmt->bindParam(':nomeUsuario',$nome, PDO::PARAM_STR);
-    $stmt->bindParam(':email',$email, PDO::PARAM_STR);
-    $stmt->bindParam(':senha',$senha, PDO::PARAM_STR);
-    $stmt->bindParam(':dataNasc',$dataNasc, PDO::PARAM_STR);
-    $stmt->bindParam(':CPF',$CPF, PDO::PARAM_STR);
-    $stmt->bindParam(':genero',$genero, PDO::PARAM_STR);
-    $stmt->bindParam(':telefone',$telefone, PDO::PARAM_STR);                   
-
-   if($telefone == "")
-   $telefone  = "undefined";
-
-   try{
-   $stmt->execute();
-   return "OK!";
+    $teste = str_split($nome,1);
+    $noNum = true;
+    foreach($teste as $i){
+        if(is_numeric($i))
+        $noNum = false;
     }
-    catch(PDOException $e){
-        return $e;
-    }
+    if($noNum){
+         $sql = 'INSERT INTO Usuario(nomeUsuario,email,senha,dataNasc,CPF,genero,telefone) 
+         VALUES(:nomeUsuario,:email,:senha,:dataNasc,:CPF,:genero,:telefone)';
+
+         $stmt = $this->pdo->prepare($sql);
+
+         $stmt->bindParam(':nomeUsuario',$nome, PDO::PARAM_STR);
+         $stmt->bindParam(':email',$email, PDO::PARAM_STR);
+         $stmt->bindParam(':senha',$senha, PDO::PARAM_STR);
+         $stmt->bindParam(':dataNasc',$dataNasc, PDO::PARAM_STR);
+         $stmt->bindParam(':CPF',$CPF, PDO::PARAM_STR);
+         $stmt->bindParam(':genero',$genero, PDO::PARAM_STR);
+         $stmt->bindParam(':telefone',$telefone, PDO::PARAM_STR);                   
+
+        if($telefone == "")
+         $telefone  = "undefined";
+
+        try{
+        $stmt->execute();
+         return "OK!";
+          }
+        catch(PDOException $e){
+          return $e;
+          }
+    }else
+    return "0";
 
    }
 
@@ -69,7 +78,7 @@ Class User{
 }
 
 $obj = new User($pdo);
-$aa=$obj->cadastro("a","a","a","2020-09-15","009","F","");
+//$aa=$obj->cadastro("abcdefgh1","a","a","2020-09-15","009","F","");
 
 //var_dump($aa);
 ?>
