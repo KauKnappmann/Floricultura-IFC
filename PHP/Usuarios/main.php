@@ -14,7 +14,9 @@ try{
         case 0; //login
 
          $_COOKIE["login"] = $obj->login($_POST['email'],$_POST['senha']); 
-         echo $_COOKIE["login"];
+         if($_COOKIE["login"] == "0")
+            echo "dados incorretos";
+         
          
         break;
 
