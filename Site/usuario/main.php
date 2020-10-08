@@ -9,13 +9,14 @@ try{
 
      $pdo = Conexao::getInstance();
 
+     //classe de funções usuario;
 Class User{
     private $sql;
 
+    // metodo construtor que puxa o pdo;
     public function __construct($pdo)
     {
         $this->pdo = $pdo;
-        //login("asd","asd");
     }
 
 
@@ -39,12 +40,13 @@ Class User{
 
    public function cadastro($nome,$email,$senha,$dataNasc,$CPF,$genero,$telefone){
 
-     $teste = str_split($nome,1);
+     $split_name = str_split($nome,1);
      $noNum = true;
-    foreach($teste as $i){
+    foreach($split_name as $i){
          if(is_numeric($i))
          $noNum = false;
      }
+     
     if($noNum){
          $sql = 'INSERT INTO Usuario(nomeUsuario,email,senha,dataNasc,CPF,genero,telefone) 
          VALUES(:nomeUsuario,:email,:senha,:dataNasc,:CPF,:genero,:telefone)';
@@ -67,7 +69,7 @@ Class User{
          return "OK!";
           }
         catch(PDOException $e){
-          return $e;
+          return $e['code'];
           }
     }else
     return "0";
@@ -77,8 +79,4 @@ Class User{
     
 }
 
-$obj = new User($pdo);
-//$aa=$obj->cadastro("abcdefgh1","a","a","2020-09-15","009","F","");
-
-//var_dump($aa);
 ?>

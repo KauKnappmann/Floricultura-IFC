@@ -12,11 +12,11 @@ try{
     switch($do){
 
         case 0; //login
+        if(!isset($_SESSION))
+        session_start();
+        
 
-         $_COOKIE["login"] = $obj->login($_POST['email'],$_POST['senha']); 
-         if($_COOKIE["login"] == "0")
-            echo "dados incorretos";
-         
+         $_SESSION['login'] = $obj->login($_POST['email'],$_POST['senha']); 
          
         break;
 
@@ -28,13 +28,15 @@ try{
 
          $cad = $obj->cadastro( $_POST['nome'],$_POST['email'],$_POST['senha'],$_POST['dataNasc'],$_POST['genero'],$_POST['CPF'],$telefone);
 
-        if($cad != "OK!")
-         echo $cad['code'];
-
+        if($cad != "OK!"){
+         echo $cad; 
+        }
+        
+        
          break;
 
 
 
     }
-
+    header('location:../index.php');
 ?>
