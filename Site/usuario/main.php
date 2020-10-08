@@ -1,9 +1,5 @@
 <?php 
-<<<<<<< HEAD
-//require_once ('classes/Upload.class.php');
-=======
 require_once ('../classes/Upload.class.php');
->>>>>>> 2f4e033141553957f52deb86c1991986709265c5
 
 //setting params
 try{
@@ -44,14 +40,8 @@ Class User{
 
     }
 
-<<<<<<< HEAD
-        // função de cadastro
-    public function cadastro($nome,$email,$senha,$dataNasc,$CPF,$genero,$telefone){
-
-=======
    public function cadastro($nome,$email,$senha,$dataNasc,$CPF,$genero,$telefone,$imagem){
     
->>>>>>> 2f4e033141553957f52deb86c1991986709265c5
      $split_name = str_split($nome,1);
      $noNum = true;
     foreach($split_name as $i){
@@ -61,13 +51,7 @@ Class User{
      
     if($noNum){
 
-<<<<<<< HEAD
-         $destino = "Images/".$_FILES['imagem']['name'];
-         move_uploaded_file($_FILES['imagem']['tmp_name'],$destino);
-
-=======
         
->>>>>>> 2f4e033141553957f52deb86c1991986709265c5
          $sql = 'INSERT INTO Usuario(nomeUsuario,email,senha,dataNasc,CPF,genero,telefone,imagem) 
          VALUES(:nomeUsuario,:email,:senha,:dataNasc,:CPF,:genero,:telefone,:imagem)';
          $sql = 'INSERT INTO Usuario(nomeUsuario,email,senha,dataNasc,CPF,genero,telefone,imagem) 
@@ -92,13 +76,8 @@ Class User{
         $stmt->execute();
          return "OK!";
           }
-<<<<<<< HEAD
-        catch(PDOException $e){
-         return $e['code'];
-=======
           catch(PDOException $e){
             return $e['code'];
->>>>>>> 2f4e033141553957f52deb86c1991986709265c5
           }
     }else
      return "0";
