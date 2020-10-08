@@ -39,9 +39,14 @@ Class User{
 
     }
 
-   public function cadastro($nome,$email,$senha,$dataNasc,$CPF,$genero,$telefone,$imagem){
+   public function cadastro($nome,$email,$senha,$dataNasc,$CPF,$genero,$telefone){
+<<<<<<< HEAD
     
      $teste = str_split($nome,1);
+=======
+
+     $split_name = str_split($nome,1);
+>>>>>>> fd1ecbcd4a5ce9e84ff4eb1d124f0a5889def53a
      $noNum = true;
     foreach($split_name as $i){
          if(is_numeric($i))
@@ -49,13 +54,23 @@ Class User{
      }
      
     if($noNum){
-
+<<<<<<< Updated upstream
+<<<<<<< HEAD
         
-         $sql = 'INSERT INTO Usuario(nomeUsuario,email,senha,dataNasc,CPF,genero,telefone,imagem) 
-         VALUES(:nomeUsuario,:email,:senha,:dataNasc,:CPF,:genero,:telefone,:imagem)';
-         $sql = 'INSERT INTO Usuario(nomeUsuario,email,senha,dataNasc,CPF,genero,telefone,imagem) 
-         VALUES(:nomeUsuario,:email,:senha,:dataNasc,:CPF,:genero,:telefone,:imagem)';
+         $sql = 'INSERT INTO Usuario(nomeUsuario,email,senha,dataNasc,CPF,genero,telefone) 
+         VALUES(:nomeUsuario,:email,:senha,:dataNasc,:CPF,:genero,:telefone)';
+=======
+        $destino = "Images/".$_FILES['imagem']['name'];
+        move_uploaded_file($_FILES['imagem']['tmp_name'],$destino);
+=======
+        
+         $destino = "Images/".$_FILES['imagem']['name'];
+         move_uploaded_file($_FILES['imagem']['tmp_name'],$destino);
 
+>>>>>>> Stashed changes
+         $sql = 'INSERT INTO Usuario(nomeUsuario,email,senha,dataNasc,CPF,genero,telefone,imagem) 
+         VALUES(:nomeUsuario,:email,:senha,:dataNasc,:CPF,:genero,:telefone,:imagem)';
+>>>>>>> fd1ecbcd4a5ce9e84ff4eb1d124f0a5889def53a
 
          $stmt = $this->pdo->prepare($sql);
 
@@ -75,8 +90,13 @@ Class User{
         $stmt->execute();
          return "OK!";
           }
+<<<<<<< HEAD
           catch(PDOException $e){
             return $e['code'];
+=======
+        catch(PDOException $e){
+          return $e['code'];
+>>>>>>> fd1ecbcd4a5ce9e84ff4eb1d124f0a5889def53a
           }
     }else
     return "0";
