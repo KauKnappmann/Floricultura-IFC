@@ -4,7 +4,7 @@ require_once ('../classes/Upload.class.php');
 //setting params
 try{
     include_once "../conf/Conexao.php";
-    } catch(Exeption $e){
+    } catch(Exception $e){
         echo "Erro: ". $e->getMessage();
     }
 
