@@ -25,22 +25,12 @@ try{
          case 1; //cadastro
         
 
-<<<<<<< HEAD
          $cad = $obj->cadastro( $_POST['nome'],$_POST['email'],$_POST['senha'],$_POST['dataNasc'],$_POST['genero'],
                                 $_POST['CPF'],$_POST['telefone'], $_POST['imagem']);
                             
-=======
-         $echonumero = "Você inseriu um número no nome!";
-         $telefone = $_POST['telefone'];
-        if($telefone=="")
-            $telefone = "undefined";
-
-         $cad = $obj->cadastro( $_POST['nome'],$_POST['email'],$_POST['senha'],$_POST['dataNasc'],$_POST['genero'],$_POST['CPF'],$telefone, $_POST['imagem']);
-
->>>>>>> ea158d60240e2efa24e4baae89c490b790fa7ca8
         if($cad != "OK!"){
          
-        
+            $obj->mensagemErro($cad);
          
         }
         
