@@ -29,7 +29,7 @@ try{
                                 $_POST['CPF'],$_POST['telefone'], $_POST['imagem']);
                             
         if($cad != "OK!"){
-         
+            var_dump($cad);
             $obj->mensagemErro($cad);
          
         }
