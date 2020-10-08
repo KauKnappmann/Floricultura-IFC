@@ -1,5 +1,5 @@
 <?php 
-require_once ('../classes/Upload.class.php');
+require_once ('Upload.class.php');
 
 //setting params
 try{
@@ -21,7 +21,7 @@ Class User{
     }
 
 
-        //função de login
+         //função de login
     public function login($email,$senha){
    
              $sql = "Select codUsuario from Usuario where email = :email and senha = :senha";
@@ -41,13 +41,10 @@ Class User{
     }
 
    public function cadastro($nome,$sobrenome,$email,$senha,$dataNasc,$CPF,$genero,$telefone,$imagem){
-    
-     $split_name = str_split($nome,1);
-     $noNum = true;
-    foreach($split_name as $i){
-         if(is_numeric($i))
-         $noNum = false;
-     }
+
+     $noNum = $this->noNumName($nome);
+    if($noNum)
+    $noNum = $this->noNumName($sobrenome);
      
     if($noNum){
 
@@ -82,13 +79,22 @@ Class User{
 
     }
 
+    private function noNumName($name){
+        $split_name = str_split($name,1);
+        foreach($split_name as $i){
+            if(is_numeric($i))
+            return false;
+        }
+        return true;
+    }
+
     public function mensagemErro($erro){
 
         switch($erro){
 
             case 0:
 
-                echo "Você possui números no nome, e a não ser que você seja filho do Elon Musk, isso não é possivel";
+                echo "Você possui números no nome ou sobrenome, e, a não ser que você seja filho do Elon Musk, isso não é possivel";
 
             break;
 

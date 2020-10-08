@@ -5,7 +5,7 @@
         private $nome_substituto; //nome que irá sobrescrever o nome da imagem atual
         private $permite; //Tipo de imagem permitida, ex:png,jpg,gif,pjpeg,jpeg
         /**
-         * @param name_imagem é o nome do arquivo enviado
+         * @param imagem é o nome do arquivo enviado
          * @param pasta_destino é o caminho da pasta onde será armazenado o arquivo
          * 
          * @return array caso ocorra um erro, onde o na posição de mensagem está descrito o erro
@@ -14,7 +14,7 @@
         public function uploadImagem ($name_imagem,$pasta_destino)
         {
 
-            if (!empty($_FILES[$imagem]['imagem'])) {
+            if (!empty($_FILES[$name_imagem]['imagem'])) {
                 // pega o nome do arquivo enviado
                 $this->name = $_FILES[$imagem];
                 // define o a extensão permitida
@@ -28,7 +28,7 @@
                 echo $extensao;
                 // nome gerado a cada segundo
                 $this->nome_substituto = md5(time());
-                 echo $this->pasta,"upload";
+                 echo $this->pasta,"AAAAAAAAAA";
                 // caminho do arquivo
                 $upload_arquivo = $this->pasta.$this->nome_substituto.".".$extensao;
                 // é o nome do arquivo que vai no banco de dados que não necessita do diretório

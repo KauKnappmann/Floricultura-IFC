@@ -11,6 +11,8 @@ try{
      $obj = new User(Conexao::getInstance());
     switch($do){
 
+        
+
         case 0; //login
         
         //inicializa sessão
@@ -23,6 +25,9 @@ try{
         break;
 
          case 1; //cadastro
+
+         if(!isset($_SESSION))
+        session_start();
         
 
          $cad = $obj->cadastro( $_POST['nome'],$_POST['sobrenome'],$_POST['email'],$_POST['senha'],$_POST['dataNasc'],$_POST['genero'],
@@ -30,19 +35,16 @@ try{
                             
         if($cad != "OK!"){
             var_dump($cad);
-<<<<<<< HEAD
             $obj->mensagemErro($cad);
-=======
-            //$obj->mensagemErro($cad);
->>>>>>> f4852085f3d0e224f9ba4091c6e41e60d2d9c7e5
          
         }
         
-        
+        $_SESSION['login'] = $obj->login($_POST['email'],$_POST['senha']); 
+
          break;
 
 
 
     }
-    //header('location:../index.php');
+    header('location:../index.php');
 ?>
