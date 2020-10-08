@@ -25,12 +25,12 @@ try{
          case 1; //cadastro
         
 
-         $cad = $obj->cadastro( $_POST['nome'],$_POST['email'],$_POST['senha'],$_POST['dataNasc'],$_POST['genero'],
+         $cad = $obj->cadastro( $_POST['nome'],$_POST['sobrenome'],$_POST['email'],$_POST['senha'],$_POST['dataNasc'],$_POST['genero'],
                                 $_POST['CPF'],$_POST['telefone'], $_POST['imagem']);
                             
         if($cad != "OK!"){
-         
-            $obj->mensagemErro($cad);
+            var_dump($cad);
+            //$obj->mensagemErro($cad);
          
         }
         
