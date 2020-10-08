@@ -73,13 +73,8 @@ Class User{
         $stmt->execute();
          return "OK!";
           }
-<<<<<<< HEAD
           catch(Exception $e){
             return $e->getMessage();
-=======
-          catch(PDOException $e){
-            return $e['code'];
->>>>>>> ea158d60240e2efa24e4baae89c490b790fa7ca8
           }
     }else
      return "0";
@@ -90,17 +85,17 @@ Class User{
 
         switch($erro){
 
-             case 0:
+            case 0:
 
                 echo "Você possui números no nome, e a não ser que você seja filho do Elon Musk, isso não é possivel";
 
-             break;
+            break;
 
-             case 22001:
+            case 22001:
 
                 echo "Senha muito longa, se empolgou!";
              
-             break;
+            break;
 
              
 
