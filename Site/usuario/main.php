@@ -73,8 +73,13 @@ Class User{
         $stmt->execute();
          return "OK!";
           }
+<<<<<<< HEAD
           catch(Exception $e){
             return $e->getMessage();
+=======
+          catch(PDOException $e){
+            return $e['code'];
+>>>>>>> ea158d60240e2efa24e4baae89c490b790fa7ca8
           }
     }else
      return "0";
