@@ -41,7 +41,7 @@ Class User{
 
    public function cadastro($nome,$email,$senha,$dataNasc,$CPF,$genero,$telefone,$imagem){
     
-     $teste = str_split($nome,1);
+     $split_name = str_split($nome,1);
      $noNum = true;
     foreach($split_name as $i){
          if(is_numeric($i))

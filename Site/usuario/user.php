@@ -27,14 +27,13 @@ try{
         if($telefone=="")
             $telefone = "undefined";
 
-         $cad = $obj->cadastro( $_POST['nome'],$_POST['email'],$_POST['senha'],$_POST['dataNasc'],$_POST['genero'],$_POST['CPF'],$telefone,$_POST['imagem']);
+         $cad = $obj->cadastro( $_POST['nome'],$_POST['email'],$_POST['senha'],$_POST['dataNasc'],$_POST['genero'],$_POST['CPF'],$telefone);
 
         if($cad != "OK!"){
-         echo $cad;
-         echo $echonumero;
-         echo "<br>";
-         echo "<a href='cadastro.html'></a>";
+         echo $cad; 
         }
+        
+        
          break;
 
 
