@@ -38,7 +38,7 @@ Class User{
     }
 
    public function cadastro($nome,$email,$senha,$dataNasc,$CPF,$genero,$telefone){
-
+    
      $teste = str_split($nome,1);
      $noNum = true;
     foreach($teste as $i){
@@ -46,6 +46,7 @@ Class User{
          $noNum = false;
      }
     if($noNum){
+        
          $sql = 'INSERT INTO Usuario(nomeUsuario,email,senha,dataNasc,CPF,genero,telefone) 
          VALUES(:nomeUsuario,:email,:senha,:dataNasc,:CPF,:genero,:telefone)';
 
@@ -66,8 +67,8 @@ Class User{
         $stmt->execute();
          return "OK!";
           }
-        catch(PDOException $e){
-          return $e;
+          catch(PDOException $e){
+            return $e['code'];
           }
     }else
     return "0";

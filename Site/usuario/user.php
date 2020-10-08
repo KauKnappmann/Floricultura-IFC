@@ -22,15 +22,19 @@ try{
 
          case 1; //cadastro
 
+         $echonumero = "Você inseriu um número no nome!";
          $telefone = $_POST['telefone'];
         if($telefone=="")
             $telefone = "undefined";
 
          $cad = $obj->cadastro( $_POST['nome'],$_POST['email'],$_POST['senha'],$_POST['dataNasc'],$_POST['genero'],$_POST['CPF'],$telefone);
 
-        if($cad != "OK!")
-         echo $cad['code'];
-
+        if($cad != "OK!"){
+         echo $cad;
+         echo $echonumero;
+         echo "<br>";
+         echo "<a href='cadastro.html'></a>";
+        }
          break;
 
 
