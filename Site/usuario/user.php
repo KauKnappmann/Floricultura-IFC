@@ -2,7 +2,7 @@
 try{
     include_once "../conf/Conexao.php";
     require "main.php";
-    } catch(Exeption $e){
+    } catch(Exception $e){
          echo "Erro: ". $e->getMessage();
         }
 
@@ -24,7 +24,16 @@ try{
 
          case 1; //cadastro
 
+<<<<<<< HEAD
          $cad = $obj->cadastro( $_POST['nome'],$_POST['email'],$_POST['senha'],$_POST['dataNasc'],$_POST['genero'],$_POST['CPF'],$_POST['telefone']);
+=======
+         $echonumero = "Você inseriu um número no nome!";
+         $telefone = $_POST['telefone'];
+        if($telefone=="")
+            $telefone = "undefined";
+
+         $cad = $obj->cadastro( $_POST['nome'],$_POST['email'],$_POST['senha'],$_POST['dataNasc'],$_POST['genero'],$_POST['CPF'],$telefone, $_POST['imagem']);
+>>>>>>> 2f4e033141553957f52deb86c1991986709265c5
 
         if($cad != "OK!"){
          echo $cad; 
