@@ -25,12 +25,16 @@ try{
          case 1; //cadastro
         
 
-         $cad = $obj->cadastro( $_POST['nome'],$_POST['email'],$_POST['senha'],$_POST['dataNasc'],$_POST['genero'],
+         $cad = $obj->cadastro( $_POST['nome'],$_POST['sobrenome'],$_POST['email'],$_POST['senha'],$_POST['dataNasc'],$_POST['genero'],
                                 $_POST['CPF'],$_POST['telefone'], $_POST['imagem']);
                             
         if($cad != "OK!"){
             var_dump($cad);
+<<<<<<< HEAD
             $obj->mensagemErro($cad);
+=======
+            //$obj->mensagemErro($cad);
+>>>>>>> f4852085f3d0e224f9ba4091c6e41e60d2d9c7e5
          
         }
         

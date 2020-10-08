@@ -40,7 +40,7 @@ Class User{
 
     }
 
-   public function cadastro($nome,$email,$senha,$dataNasc,$CPF,$genero,$telefone,$imagem){
+   public function cadastro($nome,$sobrenome,$email,$senha,$dataNasc,$CPF,$genero,$telefone,$imagem){
     
      $split_name = str_split($nome,1);
      $noNum = true;
@@ -52,15 +52,16 @@ Class User{
     if($noNum){
 
         
-         $sql = 'INSERT INTO Usuario(nomeUsuario,email,senha,dataNasc,CPF,genero,telefone,imagem) 
-         VALUES(:nomeUsuario,:email,:senha,:dataNasc,:CPF,:genero,:telefone,:imagem)';
+         $sql = 'INSERT INTO Usuario(nome,sobrenome,email,senha,dataNasc,CPF,genero,telefone,imagem) 
+         VALUES(:nome,:sobrenome,:email,:senha,:dataNasc,:CPF,:genero,:telefone,:imagem)';
 
          $stmt = $this->pdo->prepare($sql);
 
         if($telefone == "")
          $telefone  = "undefined";
 
-         $stmt->bindParam(':nomeUsuario',$nome, PDO::PARAM_STR);
+         $stmt->bindParam(':nome',$nome, PDO::PARAM_STR);
+         $stmt->bindParam(':sobrenome',$sobrenome, PDO::PARAM_STR);
          $stmt->bindParam(':email',$email, PDO::PARAM_STR);
          $stmt->bindParam(':senha',$senha, PDO::PARAM_STR);
          $stmt->bindParam(':dataNasc',$dataNasc, PDO::PARAM_STR);
