@@ -1,4 +1,5 @@
 <?php 
+require_once ('classes/Upload.class.php');
 
 //setting params
 try{
@@ -9,13 +10,14 @@ try{
 
      $pdo = Conexao::getInstance();
 
+     //classe de funções usuario;
 Class User{
     private $sql;
 
+    // metodo construtor que puxa o pdo;
     public function __construct($pdo)
     {
         $this->pdo = $pdo;
-        //login("asd","asd");
     }
 
 
@@ -38,17 +40,30 @@ Class User{
     }
 
    public function cadastro($nome,$email,$senha,$dataNasc,$CPF,$genero,$telefone){
+<<<<<<< HEAD
     
      $teste = str_split($nome,1);
+=======
+
+     $split_name = str_split($nome,1);
+>>>>>>> fd1ecbcd4a5ce9e84ff4eb1d124f0a5889def53a
      $noNum = true;
-    foreach($teste as $i){
+    foreach($split_name as $i){
          if(is_numeric($i))
          $noNum = false;
      }
+     
     if($noNum){
+<<<<<<< HEAD
         
          $sql = 'INSERT INTO Usuario(nomeUsuario,email,senha,dataNasc,CPF,genero,telefone) 
          VALUES(:nomeUsuario,:email,:senha,:dataNasc,:CPF,:genero,:telefone)';
+=======
+        $destino = "Images/".$_FILES['imagem']['name'];
+        move_uploaded_file($_FILES['imagem']['tmp_name'],$destino);
+         $sql = 'INSERT INTO Usuario(nomeUsuario,email,senha,dataNasc,CPF,genero,telefone,imagem) 
+         VALUES(:nomeUsuario,:email,:senha,:dataNasc,:CPF,:genero,:telefone,:imagem)';
+>>>>>>> fd1ecbcd4a5ce9e84ff4eb1d124f0a5889def53a
 
          $stmt = $this->pdo->prepare($sql);
 
@@ -59,6 +74,7 @@ Class User{
          $stmt->bindParam(':CPF',$CPF, PDO::PARAM_STR);
          $stmt->bindParam(':genero',$genero, PDO::PARAM_STR);
          $stmt->bindParam(':telefone',$telefone, PDO::PARAM_STR);                   
+         $stmt->bindParam(':imagem',$imagem, PDO::PARAM_STR); 
 
         if($telefone == "")
          $telefone  = "undefined";
@@ -67,8 +83,13 @@ Class User{
         $stmt->execute();
          return "OK!";
           }
+<<<<<<< HEAD
           catch(PDOException $e){
             return $e['code'];
+=======
+        catch(PDOException $e){
+          return $e['code'];
+>>>>>>> fd1ecbcd4a5ce9e84ff4eb1d124f0a5889def53a
           }
     }else
     return "0";
@@ -78,8 +99,4 @@ Class User{
     
 }
 
-$obj = new User($pdo);
-//$aa=$obj->cadastro("abcdefgh1","a","a","2020-09-15","009","F","");
-
-//var_dump($aa);
 ?>
