@@ -34,7 +34,9 @@ try{
                                 $_POST['CPF'],$_POST['telefone'], $_POST['imagem']);
                             
         if($cad != "OK!"){
-            var_dump($cad);
+            // descomente isso para achar erros ->
+         //   var_dump($cad); 
+            
             $obj->mensagemErro($cad);
          
         }
@@ -46,5 +48,10 @@ try{
 
 
     }
-    header('location:../index.php');
+    //comente isso para procurar erros:
+   // header('location:../index.php');
+
+
+   // quando for procurar busgs, lembre-se de olhar o banco de dados no MySql, tem algumas coisas como limite de caracteres que pode 
+   // ajudar na busca
 ?>

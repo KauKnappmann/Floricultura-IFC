@@ -10,5 +10,5 @@ if(!isset($_SESSION)){
 }else
 echo "n foi";
 //echo $_SESSION["login"];
-header("location:index.html");
+//header("location:index.html");
 ?>

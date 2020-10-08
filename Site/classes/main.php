@@ -1,14 +1,10 @@
 <?php 
-require_once ('Upload.class.php');
+
 
 //setting params
-try{
-    include_once "../conf/Conexao.php";
-    } catch(Exception $e){
-        echo "Erro: ". $e->getMessage();
-    }
+require_once ('Upload.class.php');
 
-     $pdo = Conexao::getInstance();
+    
 
      //classe de funções usuario;
 Class User{
@@ -49,7 +45,7 @@ Class User{
     if($noNum){
 
         
-         $sql = 'INSERT INTO Usuario(nome,sobrenome,email,senha,dataNasc,CPF,genero,telefone,imagem) 
+         $sql = 'INSERT INTO Usuario(nomeUsuario,sobrenome,email,senha,dataNasc,CPF,genero,telefone,imagem) 
          VALUES(:nome,:sobrenome,:email,:senha,:dataNasc,:CPF,:genero,:telefone,:imagem)';
 
          $stmt = $this->pdo->prepare($sql);
@@ -72,7 +68,8 @@ Class User{
          return "OK!";
           }
           catch(Exception $e){
-            return $e->getMessage();
+              //troca para return $e->getMessage(); na hora de procurar codigos de erro:
+            return $e->getCode();
           }
     }else
      return "0";
@@ -94,21 +91,31 @@ Class User{
 
             case 0:
 
-                echo "Você possui números no nome ou sobrenome, e, a não ser que você seja filho do Elon Musk, isso não é possivel";
+                $erro = "Você possui números no nome ou sobrenome, e, a não ser que você seja filho do Elon Musk, isso não é possivel";
 
             break;
 
             case 22001:
 
-                echo "Senha muito longa, se empolgou!";
+                $erro = "Senha muito longa, se empolgou!";
              
             break;
+
+            case 23000:
+
+                $erro = "email duplicado";
+
+            break;
+
+
 
              
 
 
 
         }
+        
+        echo $erro;
 
     }
     
