@@ -1,5 +1,5 @@
 <?php 
-require_once ('classes/Upload.class.php');
+require_once ('../classes/Upload.class.php');
 
 //setting params
 try{
@@ -54,6 +54,7 @@ Class User{
      }
      
     if($noNum){
+<<<<<<< Updated upstream
 <<<<<<< HEAD
         
          $sql = 'INSERT INTO Usuario(nomeUsuario,email,senha,dataNasc,CPF,genero,telefone) 
@@ -61,6 +62,12 @@ Class User{
 =======
         $destino = "Images/".$_FILES['imagem']['name'];
         move_uploaded_file($_FILES['imagem']['tmp_name'],$destino);
+=======
+        
+         $destino = "Images/".$_FILES['imagem']['name'];
+         move_uploaded_file($_FILES['imagem']['tmp_name'],$destino);
+
+>>>>>>> Stashed changes
          $sql = 'INSERT INTO Usuario(nomeUsuario,email,senha,dataNasc,CPF,genero,telefone,imagem) 
          VALUES(:nomeUsuario,:email,:senha,:dataNasc,:CPF,:genero,:telefone,:imagem)';
 >>>>>>> fd1ecbcd4a5ce9e84ff4eb1d124f0a5889def53a
