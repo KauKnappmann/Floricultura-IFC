@@ -1,5 +1,5 @@
 <?php 
-require_once ('classes/Upload.class.php');
+//require_once ('classes/Upload.class.php');
 
 //setting params
 try{
@@ -21,6 +21,7 @@ Class User{
     }
 
 
+        //função de login
     public function login($email,$senha){
    
              $sql = "Select codUsuario from Usuario where email = :email and senha = :senha";
@@ -39,7 +40,8 @@ Class User{
 
     }
 
-   public function cadastro($nome,$email,$senha,$dataNasc,$CPF,$genero,$telefone){
+        // função de cadastro
+    public function cadastro($nome,$email,$senha,$dataNasc,$CPF,$genero,$telefone){
 
      $split_name = str_split($nome,1);
      $noNum = true;
@@ -49,12 +51,17 @@ Class User{
      }
      
     if($noNum){
-        $destino = "Images/".$_FILES['imagem']['name'];
-        move_uploaded_file($_FILES['imagem']['tmp_name'],$destino);
+
+         $destino = "Images/".$_FILES['imagem']['name'];
+         move_uploaded_file($_FILES['imagem']['tmp_name'],$destino);
+
          $sql = 'INSERT INTO Usuario(nomeUsuario,email,senha,dataNasc,CPF,genero,telefone,imagem) 
          VALUES(:nomeUsuario,:email,:senha,:dataNasc,:CPF,:genero,:telefone,:imagem)';
 
          $stmt = $this->pdo->prepare($sql);
+
+        if($telefone == "")
+         $telefone  = "undefined";
 
          $stmt->bindParam(':nomeUsuario',$nome, PDO::PARAM_STR);
          $stmt->bindParam(':email',$email, PDO::PARAM_STR);
@@ -65,20 +72,17 @@ Class User{
          $stmt->bindParam(':telefone',$telefone, PDO::PARAM_STR);                   
          $stmt->bindParam(':imagem',$imagem, PDO::PARAM_STR); 
 
-        if($telefone == "")
-         $telefone  = "undefined";
-
         try{
         $stmt->execute();
          return "OK!";
           }
         catch(PDOException $e){
-          return $e['code'];
+         return $e['code'];
           }
     }else
-    return "0";
+     return "0";
 
-   }
+    }
 
     
 }

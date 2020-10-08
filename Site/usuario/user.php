@@ -12,21 +12,19 @@ try{
     switch($do){
 
         case 0; //login
+        
+        //inicializa sessão
         if(!isset($_SESSION))
         session_start();
         
-
+         
          $_SESSION['login'] = $obj->login($_POST['email'],$_POST['senha']); 
          
         break;
 
          case 1; //cadastro
 
-         $telefone = $_POST['telefone'];
-        if($telefone=="")
-            $telefone = "undefined";
-
-         $cad = $obj->cadastro( $_POST['nome'],$_POST['email'],$_POST['senha'],$_POST['dataNasc'],$_POST['genero'],$_POST['CPF'],$telefone);
+         $cad = $obj->cadastro( $_POST['nome'],$_POST['email'],$_POST['senha'],$_POST['dataNasc'],$_POST['genero'],$_POST['CPF'],$_POST['telefone']);
 
         if($cad != "OK!"){
          echo $cad; 

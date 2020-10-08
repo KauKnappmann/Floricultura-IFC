@@ -1,4 +1,8 @@
 <?php
+include_once "conf/Conexao.php";
+$pdo = Conexao::getInstance();
+
+
 
 if(!isset($_SESSION)){
     session_start();    
