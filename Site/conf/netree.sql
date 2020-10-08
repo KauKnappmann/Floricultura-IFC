@@ -9,11 +9,11 @@ tipoPlanta VARCHAR(50),
 imgPlanta VARCHAR(100),
 estoquePlanta VARCHAR(100)
 );
-
+DROP TABLE Usuario;
 CREATE TABLE Usuario(
 	codUsuario INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	nomeUsuario VARCHAR(50),
-	email VARCHAR(100),
+	email VARCHAR(100)UNIQUE,
 	senha VARCHAR(12),
 	dataNasc DATE,
 	CPF VARCHAR(11),
@@ -38,7 +38,7 @@ CREATE TABLE compra(
 	nomeProdutos VARCHAR (50),
 	nomePlanta VARCHAR (50),
 	formaPagamento VARCHAR(50));
-    
+  DROP TABLE  administrador;
 CREATE TABLE administrador(
 	codAdmin INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     codUsuario INT,
