@@ -1,4 +1,5 @@
 <?php 
+require_once ('classes/Upload.class.php');
 
 //setting params
 try{
@@ -46,8 +47,10 @@ Class User{
          $noNum = false;
      }
     if($noNum){
-         $sql = 'INSERT INTO Usuario(nomeUsuario,email,senha,dataNasc,CPF,genero,telefone) 
-         VALUES(:nomeUsuario,:email,:senha,:dataNasc,:CPF,:genero,:telefone)';
+        $destino = "Images/".$_FILES['imagem']['name'];
+        move_uploaded_file($_FILES['imagem']['tmp_name'],$destino);
+         $sql = 'INSERT INTO Usuario(nomeUsuario,email,senha,dataNasc,CPF,genero,telefone,imagem) 
+         VALUES(:nomeUsuario,:email,:senha,:dataNasc,:CPF,:genero,:telefone,:imagem)';
 
          $stmt = $this->pdo->prepare($sql);
 
@@ -58,6 +61,7 @@ Class User{
          $stmt->bindParam(':CPF',$CPF, PDO::PARAM_STR);
          $stmt->bindParam(':genero',$genero, PDO::PARAM_STR);
          $stmt->bindParam(':telefone',$telefone, PDO::PARAM_STR);                   
+         $stmt->bindParam(':imagem',$imagem, PDO::PARAM_STR); 
 
         if($telefone == "")
          $telefone  = "undefined";
