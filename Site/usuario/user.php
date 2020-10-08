@@ -27,7 +27,7 @@ try{
         if($telefone=="")
             $telefone = "undefined";
 
-         $cad = $obj->cadastro( $_POST['nome'],$_POST['email'],$_POST['senha'],$_POST['dataNasc'],$_POST['genero'],$_POST['CPF'],$telefone);
+         $cad = $obj->cadastro( $_POST['nome'],$_POST['email'],$_POST['senha'],$_POST['dataNasc'],$_POST['genero'],$_POST['CPF'],$telefone, $_POST['imagem']);
 
         if($cad != "OK!"){
          echo $cad; 
