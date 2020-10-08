@@ -1,7 +1,7 @@
 <?php 
 try{
     include_once "../conf/Conexao.php";
-    require "user.php";
+    require "main.php";
     } catch(Exeption $e){
          echo "Erro: ". $e->getMessage();
         }
