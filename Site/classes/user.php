@@ -33,7 +33,7 @@ try{
         
 
          $cad = $obj->cadastro( $_POST['nome'],$_POST['sobrenome'],$_POST['email'],$_POST['senha'],$_POST['dataNasc'],$_POST['genero'],
-                                $_POST['CPF'],$_POST['telefone'], $_POST['imagem']);
+                                $_POST['CPF'],$_POST['telefone'], $_FILES['imagem']['name']);
                             
          if($cad != "OK!"){
             // descomente isso para achar erros ->

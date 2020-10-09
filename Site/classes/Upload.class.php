@@ -28,7 +28,7 @@
                 echo $extensao;
                 // nome gerado a cada segundo
                 $this->nome_substituto = md5(time());
-                 echo $this->pasta,"AAAAAAAAAA";
+                 echo $this->pasta,"Upload";
                 // caminho do arquivo
                 $upload_arquivo = $this->pasta.$this->nome_substituto.".".$extensao;
                 // é o nome do arquivo que vai no banco de dados que não necessita do diretório
