@@ -117,7 +117,7 @@
             <td><?php echo $linha['CPF'];?></td>
             <td><?php echo $linha['genero'];?></td>
             <td><?php echo $linha['telefone'];?></td>
-            <td><?php echo $linha['imagem'];?></td>
+            <td><img ><?php echo $linha['imagem'];?></td>
         </tr>
     <?php } ?>       
     </table>

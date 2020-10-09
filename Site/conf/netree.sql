@@ -22,8 +22,10 @@ CREATE TABLE Usuario(
     imagem VARCHAR(20)
     );
     
+   # ALTER TABLE Usuario
+    #ADD COLUMN ativo BOOLEAN DEFAULT false;
     ALTER TABLE Usuario
-    ADD COLUMN ativo BOOLEAN DEFAULT false;
+    DROP COLUMN ativo;
     
     
     select * from Usuario;
