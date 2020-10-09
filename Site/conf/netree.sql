@@ -19,7 +19,12 @@ CREATE TABLE Usuario(
 	CPF VARCHAR(11),
 	genero VARCHAR (20),
 	telefone VARCHAR(20),
-    imagem VARCHAR(20));
+    imagem VARCHAR(20)
+    );
+    
+    ALTER TABLE Usuario
+    ADD COLUMN ativo BOOLEAN DEFAULT false;
+    
     
     select * from Usuario;
 

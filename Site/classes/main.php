@@ -65,6 +65,7 @@ Class User{
 
         try{
         $stmt->execute();
+        $token = sha1($email)
          return "OK!";
           }
           catch(Exception $e){
