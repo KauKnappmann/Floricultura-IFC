@@ -21,6 +21,8 @@ try{
         
          
          $_SESSION['login'] = $obj->login($_POST['email'],$_POST['senha']); 
+
+         echo "Bem-vindo(a) ".$_POST['nome']." ".$_POST['sobrenome'];
          
         break;
 
@@ -42,7 +44,7 @@ try{
         }
         
         $_SESSION['login'] = $obj->login($_POST['email'],$_POST['senha']); 
-
+            echo "Bem-vindo(a) ".$_POST['nome']." ".$_POST['sobrenome'];
          break;
 
 
