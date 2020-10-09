@@ -90,24 +90,26 @@ Class User{
 
         switch($erro){
 
+            //NÃO COLOQUEM ECHO NOS CASES!!!
+
             case 0:
 
-                $erro = "Você possui números no nome ou sobrenome, e, a não ser que você seja filho do Elon Musk, isso não é possivel";
-                echo "<a href='../usuario/cadastro.html'>Volte e cadastre-se novamente</a>";
+                $erro = "Você possui números no nome ou sobrenome, e, a não ser que você seja filho do Elon Musk, isso não é possivel<br>
+                <br><a href='../usuario/cadastro.html'>Volte e cadastre-se novamente</a>";
 
             break;
 
             case 22001:
 
-                $erro = "Senha muito longa, se empolgou!";
-                echo "<a href='../usuario/cadastro.html'>Volte e cadastre-se novamente</a>";
+                $erro = "Senha muito longa, se empolgou!<br>
+                <br><a href='../usuario/cadastro.html'>Volte e cadastre-se novamente</a>";
              
             break;
 
             case 23000:
 
-                $erro = "email duplicado";
-                echo "<a href='../usuario/cadastro.html'>Volte e cadastre-se novamente</a>";
+                $erro = "email duplicado<br>
+                <br><a href='../usuario/cadastro.html'>Volte e cadastre-se novamente</a>";
 
             break;
 

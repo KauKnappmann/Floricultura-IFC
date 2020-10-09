@@ -38,7 +38,7 @@ try{
          if($cad != "OK!"){
             // descomente isso para achar erros ->
          //   var_dump($cad); 
-            
+           //    echo $cad;
             $obj->mensagemErro($cad);
          
          }
@@ -51,7 +51,7 @@ try{
 
     }
     //comente isso para procurar erros:
-    header('location:../index.php');
+       header('location:../index.php');
 
 
    // quando for procurar busgs, lembre-se de olhar o banco de dados no MySql, tem algumas coisas como limite de caracteres que pode 

@@ -12,7 +12,8 @@ estoquePlanta VARCHAR(100)
 DROP TABLE Usuario;
 CREATE TABLE Usuario(
 	codUsuario INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	nomeUsuario VARCHAR(50),
+	nome VARCHAR(50),
+    sobrenome VARCHAR(50),
 	email VARCHAR(100) UNIQUE,
 	senha VARCHAR(12),
 	dataNasc DATE,
