@@ -45,7 +45,7 @@ Class User{
     if($noNum){
 
         
-         $sql = 'INSERT INTO Usuario(nomeUsuario,sobrenome,email,senha,dataNasc,CPF,genero,telefone,imagem) 
+         $sql = 'INSERT INTO Usuario(nome,sobrenome,email,senha,dataNasc,CPF,genero,telefone,imagem) 
          VALUES(:nome,:sobrenome,:email,:senha,:dataNasc,:CPF,:genero,:telefone,:imagem)';
 
          $stmt = $this->pdo->prepare($sql);
@@ -65,7 +65,7 @@ Class User{
 
         try{
         $stmt->execute();
-        $token = sha1($email)
+        //$token = sha1($email)
          return "OK!";
           }
           catch(Exception $e){
