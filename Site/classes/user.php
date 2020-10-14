@@ -30,15 +30,16 @@ try{
 
          if(!isset($_SESSION))
         session_start();
-        
 
+        var_dump($email);
+        if($email)
          $cad = $obj->cadastro( $_POST['nome'],$_POST['sobrenome'],$_POST['email'],$_POST['senha'],$_POST['dataNasc'],$_POST['genero'],
                                 $_POST['CPF'],$_POST['telefone'], $_FILES['imagem']['name']);
                             
          if($cad != "OK!"){
             // descomente isso para achar erros ->
          //   var_dump($cad); 
-           //    echo $cad;
+
             $obj->mensagemErro($cad);
          
          }
@@ -48,10 +49,9 @@ try{
          break;
 
 
-
     }
     //comente isso para procurar erros:
-       header('location:../index.php');
+      // header('location:../index.php');
 
 
    // quando for procurar busgs, lembre-se de olhar o banco de dados no MySql, tem algumas coisas como limite de caracteres que pode 

@@ -38,7 +38,7 @@ $sql = "Select codUsuario from Usuario where email = :email and senha = :senha";
 
 
 //echo $_SESSION["login"];
-//header("location:index.html");
+header("location:index.html");
 ?>
 
 
