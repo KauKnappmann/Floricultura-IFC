@@ -2,9 +2,12 @@
     
     <?php
 include_once "conf/Conexao.php";
+require "classes/main.php";
 $pdo = Conexao::getInstance();
+$obj = new User(Conexao::getInstance());
 
 $logout = isset($_POST['logout']) ? $_POST['logout'] : false;
+
 
 if($logout){
     $logout= false;
@@ -12,25 +15,28 @@ if($logout){
     $_SESSION['login'] = 0;  
 }
 
+
 if(!isset($_SESSION))
     session_start();   
     
+if (!isset($_GET['erro'])){
     if(isset($_SESSION['login']))
         if($_SESSION['login'] != 0){
     
     
-    $sql = "Select nome,sobrenome from Usuario where codUsuario = :cod";
+     $sql = "Select nome,sobrenome from Usuario where codUsuario = :cod";
 
-    $stmt = $pdo->prepare($sql); 
-    $stmt->bindParam(":cod", $_SESSION['login'], PDO::PARAM_STR); 
-    $stmt->execute();
+     $stmt = $pdo->prepare($sql); 
+     $stmt->bindParam(":cod", $_SESSION['login'], PDO::PARAM_STR); 
+     $stmt->execute();
 
-    $login = $stmt->fetchAll();
+     $login = $stmt->fetchAll();
 
-echo "Bem vindo usuario ".$login[0]['nome'];
-echo "<br><br><form method='POST'><button type='submit' value='true' name='logout'>deslogar</button></form>";
-}
-
+     echo "Bem vindo usuario ".$login[0]['nome'];
+     echo "<br><br><form method='POST'><button type='submit' value='true' name='logout'>deslogar</button></form>";   
+    }
+}else
+ echo $obj->mensagemErro($_GET['erro']);
 
 
 $sql = "Select codUsuario from Usuario where email = :email and senha = :senha";

@@ -2,13 +2,6 @@ CREATE DATABASE equipe3;
 USE equipe3;
 DROP DATABASE equipe3;
 
-CREATE TABLE plantas(
-codPlanta INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-nomePlanta VARCHAR(50),
-tipoPlanta VARCHAR(50),
-imgPlanta VARCHAR(100),
-estoquePlanta VARCHAR(100)
-);
 DROP TABLE Usuario;
 CREATE TABLE Usuario(
 	codUsuario INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -31,6 +24,13 @@ CREATE TABLE Usuario(
     
     select * from Usuario;
 
+CREATE TABLE plantas(
+codPlanta INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+nomePlanta VARCHAR(50),
+tipoPlanta VARCHAR(50),
+imgPlanta VARCHAR(100),
+estoquePlanta VARCHAR(100)
+);
 
 CREATE TABLE produtos(
 codProdutos INT NOT NULL AUTO_INCREMENT PRIMARY KEY,

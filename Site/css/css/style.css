@@ -1971,22 +1971,35 @@ h6 {
   left: 0;
   right: 0;
   transition: 0.2s;
+  border-radius: 50%;
+  width: 192px;
 }
 
 #team .member .member-info-content {
   margin-top: 50px;
   transition: margin 0.2s;
+  border-radius: 50%;
+  width: 192px;
 }
 
 #team .member:hover .member-info {
-  background: rgba(0, 62, 128, 0.7);
+  background: rgba(0, 128, 32, 0.7);
   opacity: 1;
   transition: 0.4s;
+  border-radius: 50%;
+  width: 192px;
+}
+
+#team .member img{
+  height: 192px;
+  border-radius: 50%;
 }
 
 #team .member:hover .member-info-content {
   margin-top: 0;
   transition: margin 0.4s;
+  border-radius: 50%;
+  width: 192px;
 }
 
 #team .member h4 {
