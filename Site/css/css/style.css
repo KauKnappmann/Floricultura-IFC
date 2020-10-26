@@ -1977,15 +1977,15 @@ h6 {
 
 #team .member .member-info-content {
   margin-top: 50px;
-  transition: margin 0.2s;
+  transition: margin 20s;
   border-radius: 50%;
-  width: 192px;
+  width: 1000px;
 }
 
 #team .member:hover .member-info {
-  background: rgba(0, 128, 32, 0.7);
+  background: rgba(0, 0, 0, 0.7);
   opacity: 1;
-  transition: 0.4s;
+  transition: 10s;
   border-radius: 50%;
   width: 192px;
 }

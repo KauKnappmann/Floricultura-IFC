@@ -13,7 +13,7 @@ CREATE TABLE Usuario(
 	CPF VARCHAR(11),
 	genero VARCHAR (20),
 	telefone VARCHAR(20),
-    imagem VARCHAR(20)
+    imagem VARCHAR(100)
     );
     
    # ALTER TABLE Usuario

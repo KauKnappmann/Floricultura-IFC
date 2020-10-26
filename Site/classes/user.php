@@ -1,7 +1,7 @@
 <?php 
 try{
     include_once "../conf/Conexao.php";
-    require "main.php";
+    require "mainUsers.php";
     } catch(Exception $e){
          echo "Erro: ". $e->getMessage();
         }
@@ -33,7 +33,7 @@ try{
 
          if(!isset($_SESSION))
         session_start();
-
+        
          $cad = $obj->cadastro( $_POST['nome'],$_POST['sobrenome'],$_POST['email'],$_POST['senha'],$_POST['dataNasc'],$_POST['genero'],
                                 $_POST['CPF'],$_POST['telefone'], $_FILES['imagem']['name']);
                             
@@ -42,7 +42,6 @@ try{
          //   var_dump($cad); 
             $link = $link."?erro=".$cad;
             
-         
          }else        
          $_SESSION['login'] = $obj->login($_POST['email'],$_POST['senha']); 
             
@@ -51,7 +50,7 @@ try{
 
     }
     //comente isso para procurar erros:
-      header($link);
+      //header($link);
 
 
    // quando for procurar busgs, lembre-se de olhar o banco de dados no MySql, tem algumas coisas como limite de caracteres que pode 
