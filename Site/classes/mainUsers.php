@@ -70,8 +70,7 @@ Class User{
          $stmt->bindParam(':genero',$genero, PDO::PARAM_STR);
          $stmt->bindParam(':telefone',$telefone, PDO::PARAM_STR);                 
          $stmt->bindParam(':imagem',$imagem, PDO::PARAM_STR);
-         
-<<<<<<< HEAD:Site/classes/mainUsers.php
+     
          if($imagem != '')
  {
     $ext = strtolower(substr($_FILES['imagem']['name'],-4)); //Pegando extensão do arquivo
@@ -81,8 +80,6 @@ Class User{
     move_uploaded_file($_FILES['imagem']['tmp_name'], $dir.$new_name); //Fazer upload do arquivo
     
  }
-=======
->>>>>>> 0b7c13be877ee8c4fb76a4fcaea4dc94c5521836:Site/classes/main.php
 
         try{
         $stmt->execute();

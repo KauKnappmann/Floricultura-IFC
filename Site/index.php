@@ -2,9 +2,11 @@
     
     <?php
 include_once "conf/Conexao.php";
-require "classes/main.php";
+require "classes/mainUsers.php";
+require "classes/adm.php";
 $pdo = Conexao::getInstance();
-$obj = new User(Conexao::getInstance());
+$user = new User(Conexao::getInstance());
+$adm = new Adm(Conexao::getInstance());
 
 $logout = isset($_POST['logout']) ? $_POST['logout'] : false;
 
@@ -36,12 +38,12 @@ if (!isset($_GET['erro'])){
      echo "<br><br><form method='POST'><button type='submit' value='true' name='logout'>deslogar</button></form>";   
     }
 }else
- echo $obj->mensagemErro($_GET['erro']);
+ echo $user->mensagemErro($_GET['erro']);
 
 
 $sql = "Select codUsuario from Usuario where email = :email and senha = :senha";
-   
-
+   var_dump($adm->delete(1,9));
+   var_dump($adm->view(1));
 
 //echo $_SESSION["login"];
 //header("location:index.html");
