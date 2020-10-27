@@ -42,8 +42,20 @@ if (!isset($_GET['erro'])){
 
 
 $sql = "Select codUsuario from Usuario where email = :email and senha = :senha";
-   var_dump($adm->delete(1,9));
-   var_dump($adm->view(1));
+  // var_dump($adm->delete(1));
+   //var_dump($adm->view(1));
+
+   $teste = array(
+    'nomeUsuario' =>"tanto faz",
+     'email' =>"tanto faz",
+     'senha' =>"tanto faz",
+     'dataNasc' =>"tanto faz",
+     'CPF' => "12345678910",
+     'genero' => "hot wheels",
+     'telefone'=> ""
+   );
+    echo "<br>";$adm->register(1,$teste);
+   //var_dump(array_keys($array));
 
 //echo $_SESSION["login"];
 //header("location:index.html");
