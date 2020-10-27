@@ -48,21 +48,23 @@ try{
         'telefone' => $_POST['telefone'],
         'img' => $_FILES['imagem']['name']);
 
-         var_dump($infos);
+         //var_dump($infos);
 
          $cad = $adm->register(1,$infos);
+
+
 
          //$cad = $obj->cadastro( $_POST['nome'],$_POST['sobrenome'],$_POST['email'],$_POST['senha'],
          //$_POST['dataNasc'],$_POST['CPF'],$_POST['genero'],$_POST['telefone'],$_FILES['imagem']['name']);
 
         // nomeUsuario, sobrenome, email, senha, dataNasc, CPF, genero, telefone,img
                             
-         echo $cad;
+         var_dump($cad);
 
          if($cad != "OK!"){
             // descomente isso para achar erros ->
          //   var_dump($cad); 
-            $link = $link."?erro=".$cad;
+            //$link = $link."?erro=".$cad;
             
          }else        
          $_SESSION['login'] = $obj->login($_POST['email'],$_POST['senha']); 
