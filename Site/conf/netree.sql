@@ -13,7 +13,7 @@ CREATE TABLE Usuario(
 	CPF VARCHAR(11),
 	genero VARCHAR (20),
 	telefone VARCHAR(20),
-    imagem VARCHAR(100)
+    img VARCHAR(100)
     );
     
    # ALTER TABLE Usuario
@@ -28,7 +28,7 @@ CREATE TABLE plantas(
 codPlanta INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 nomePlanta VARCHAR(50),
 tipoPlanta VARCHAR(50),
-imgPlanta VARCHAR(100),
+img VARCHAR(100),
 estoquePlanta VARCHAR(100)
 );
 
@@ -37,7 +37,7 @@ codProdutos INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 nomeProdutos VARCHAR(50),
 estoqueProdutos INT,
 tipoProdutos VARCHAR(50),
-imgProdutos VARCHAR(100));
+img VARCHAR(100));
 
 CREATE TABLE compra(
 	codCompra INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -55,7 +55,7 @@ CREATE TABLE administrador(
 	
 #início de inserção de dados
 
-INSERT INTO plantas(nomePlanta, tipoPlanta, imgPlanta, estoquePlanta)
+INSERT INTO plantas(nomePlanta, tipoPlanta, img, estoquePlanta)
 VALUES('Copo de Leite', 'Flor', 'cp.png', 2),
 ('Flor do campo', 'Flor', 'flor.jpeg', 25),
 ('Girassol', 'Flor', 'grss.png', 48),
@@ -84,7 +84,7 @@ VALUES('Copo de Leite', 'Flor', 'cp.png', 2),
 SELECT * FROM plantas;
 
 
-INSERT INTO produtos (nomeProdutos, estoqueProdutos, tipoProdutos, imgProdutos)
+INSERT INTO produtos (nomeProdutos, estoqueProdutos, tipoProdutos, img)
 VALUES ('Vaso de ceramica amarelo', 7, 'Vaso', 'vasoyellow.png'),
 	   ('Adubo com minhoca', 4, 'Adubo', 'adub.png');
 

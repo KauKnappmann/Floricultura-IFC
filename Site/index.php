@@ -38,7 +38,7 @@ if (!isset($_GET['erro'])){
      echo "<br><br><form method='POST'><button type='submit' value='true' name='logout'>deslogar</button></form>";   
     }
 }else
- echo $user->mensagemErro($_GET['erro']);
+ echo $adm->mensagemErro($_GET['erro']);
 
 
 $sql = "Select codUsuario from Usuario where email = :email and senha = :senha";

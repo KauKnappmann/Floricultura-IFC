@@ -2,6 +2,8 @@
 try{
     include_once "../conf/Conexao.php";
     require "mainUsers.php";
+    require "adm.php";
+    
     } catch(Exception $e){
          echo "Erro: ". $e->getMessage();
         }
@@ -9,6 +11,8 @@ try{
      $do = isset($_POST['doit']) ? $_POST['doit'] : 0;
         
      $obj = new User(Conexao::getInstance());
+
+     $adm = new Adm(Conexao::getInstance());
 
         $link = "location:../index.php";
 
@@ -33,10 +37,28 @@ try{
 
          if(!isset($_SESSION))
         session_start();
-        
-         $cad = $obj->cadastro( $_POST['nome'],$_POST['sobrenome'],$_POST['email'],$_POST['senha'],$_POST['dataNasc'],$_POST['genero'],
-                                $_POST['CPF'],$_POST['telefone'], $_FILES['imagem']['name']);
+        $infos = array(
+        'nomeUsuario' => $_POST['nome'],
+        'sobrenome' => $_POST['sobrenome'],
+        'email' => $_POST['email'],
+        'senha' => $_POST['senha'],
+        'dataNasc' => $_POST['dataNasc'],
+        'CPF' => $_POST['CPF'],
+        'genero' => $_POST['genero'],
+        'telefone' => $_POST['telefone'],
+        'img' => $_FILES['imagem']['name']);
+
+         var_dump($infos);
+
+         $cad = $adm->register(1,$infos);
+
+         //$cad = $obj->cadastro( $_POST['nome'],$_POST['sobrenome'],$_POST['email'],$_POST['senha'],
+         //$_POST['dataNasc'],$_POST['CPF'],$_POST['genero'],$_POST['telefone'],$_FILES['imagem']['name']);
+
+        // nomeUsuario, sobrenome, email, senha, dataNasc, CPF, genero, telefone,img
                             
+         echo $cad;
+
          if($cad != "OK!"){
             // descomente isso para achar erros ->
          //   var_dump($cad); 
@@ -50,7 +72,7 @@ try{
 
     }
     //comente isso para procurar erros:
-      header($link);
+      //header($link);
 
 
    // quando for procurar busgs, lembre-se de olhar o banco de dados no MySql, tem algumas coisas como limite de caracteres que pode 

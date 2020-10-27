@@ -39,7 +39,7 @@ Class User{
 
 
         
-         $sql = 'INSERT INTO Usuario(nome,sobrenome,email,senha,dataNasc,CPF,genero,telefone,imagem) 
+         $sql = 'INSERT INTO Usuario(nomeUsuario,sobrenome,email,senha,dataNasc,CPF,genero,telefone,img) 
          VALUES(:nome,:sobrenome,:email,:senha,:dataNasc,:CPF,:genero,:telefone,:imagem)';
 
          $stmt = $this->pdo->prepare($sql);
@@ -74,7 +74,7 @@ Class User{
           }
           catch(Exception $e){
               //troca para return $e->getMessage(); na hora de procurar codigos de erro:
-            return $e->getCode();
+            return $e->getMessage();
           }
         }
 
