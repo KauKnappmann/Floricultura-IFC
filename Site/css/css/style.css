@@ -1984,9 +1984,9 @@ h6 {
 }
 
 #team .member:hover .member-info {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(31, 119, 43, 0.267);
   opacity: 1;
-  transition: 10s;
+  transition: 0.2s;
   border-radius: 50%;
   width: 192px;
 }
