@@ -23,12 +23,17 @@ try{
         case 0; //login
         
         //inicializa sessão
-        if(!isset($_SESSION))
-        session_start();
+         if(!isset($_SESSION))
+          session_start();
         
          
-         $_SESSION['login'] = $obj->login($_POST['email'],$_POST['senha']); 
+          $login = $obj->login($_POST['email'],$_POST['senha']);
 
+         if($login != 0){
+          $_SESSION['login'] = $login[0]; 
+          $_SESSION['nome'] = $login[1];
+         }else
+          $link = $link."?erro=0";
          
          
         break;
@@ -36,45 +41,42 @@ try{
         case 1; //cadastro
 
          if(!isset($_SESSION))
-        session_start();
-        $infos = array(
-        'nomeUsuario' => $_POST['nome'],
-        'sobrenome' => $_POST['sobrenome'],
-        'email' => $_POST['email'],
-        'senha' => $_POST['senha'],
-        'dataNasc' => $_POST['dataNasc'],
-        'CPF' => $_POST['CPF'],
-        'genero' => $_POST['genero'],
-        'telefone' => $_POST['telefone'],
-        'img' => $_FILES['imagem']['name']);
+          session_start();
+
+         $infos = array(
+          'nomeUsuario' => $_POST['nome'],
+          'sobrenome' => $_POST['sobrenome'],
+          'email' => $_POST['email'],
+          'senha' => $_POST['senha'],
+          'dataNasc' => $_POST['dataNasc'],
+          'CPF' => $_POST['CPF'],
+          'genero' => $_POST['genero'],
+          'telefone' => $_POST['telefone'],
+          'img' => $_FILES['imagem']['name']
+         );
 
          //var_dump($infos);
 
          $cad = $adm->register(1,$infos);
-
-
-
-         //$cad = $obj->cadastro( $_POST['nome'],$_POST['sobrenome'],$_POST['email'],$_POST['senha'],
-         //$_POST['dataNasc'],$_POST['CPF'],$_POST['genero'],$_POST['telefone'],$_FILES['imagem']['name']);
-
-        // nomeUsuario, sobrenome, email, senha, dataNasc, CPF, genero, telefone,img
                             
          var_dump($cad);
 
          if($cad != "OK!"){
             // descomente isso para achar erros ->
          //   var_dump($cad); 
-            //$link = $link."?erro=".$cad;
+            $link = $link."?erro=".$cad;
             
-         }else        
-         $_SESSION['login'] = $obj->login($_POST['email'],$_POST['senha']); 
-            
+         }else{     
+            $login = $obj->login($_POST['email'],$_POST['senha']);
+          $_SESSION['login'] = $login[0]; 
+          $_SESSION['nome'] = $login[1];
+         }
          break;
 
 
     }
     //comente isso para procurar erros:
-      //header($link);
+      header($link);
 
 
    // quando for procurar busgs, lembre-se de olhar o banco de dados no MySql, tem algumas coisas como limite de caracteres que pode 

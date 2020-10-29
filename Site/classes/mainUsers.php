@@ -19,7 +19,7 @@ Class User{
          //função de login
     public function login($email,$senha){
    
-             $sql = "Select codUsuario from Usuario where email = :email and senha = :senha";
+             $sql = "Select codUsuario,nomeUsuario from Usuario where email = :email and senha = :senha";
    
              $stmt = $this->pdo->prepare($sql); 
              $stmt->bindParam(":email", $email, PDO::PARAM_STR); 
@@ -28,7 +28,7 @@ Class User{
    
              $login = $stmt->fetchAll();
              if(count($login) > 0)
-             return $login[0]["codUsuario"];
+             return array($login[0]["codUsuario"],$login[0]["nomeUsuario"]);
                
              else
              return "0";

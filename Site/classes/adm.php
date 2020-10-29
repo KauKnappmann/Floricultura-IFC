@@ -10,42 +10,69 @@ class Adm{
 
     public function register($table,$info){
 
-        $sql = "insert into ";
+        $sql = "INSERT INTO ";
+
+        $keys = array_keys($info);
 
         switch ($table){
 
             case 0:
 
-                $sql = $sql."Plantas(nomePlanta, tipoPlanta, imgPlanta, estoquePlanta) values(";
+                $sql = $sql."Plantas(nomePlanta, tipoPlanta, imgPlanta, estoquePlanta,img) VALUES(";
 
-           break;
+            break;
 
-           case 1:
+            case 1:
 
-            $sql = $sql."Usuario(nomeUsuario, email, senha, dataNasc, CPF, genero, telefone) values("; 
+             $sql = $sql."Usuario(nomeUsuario, sobrenome, email, senha, dataNasc, CPF, genero, telefone,img) VALUES("; 
 
+            break;
 
-           break;
+            case 2:
 
-           case 2:
+             $sql = $sql."Produtos(nomeProdutos, estoqueProdutos, tipoProdutos, imgProdutos,img) VALUES(";
 
-            $sql = $sql."Produtos(nomeProdutos, estoqueProdutos, tipoProdutos, imgProdutos) values(";
-
-           break;
+            break;
 
         }
 
-        for($i=0;$i<count(array_keys($info));$i++){
+        for($i=0;$i<count($info);$i++){
             
-            $sql = $sql.":".array_keys($info)[$i];
+             $sql = $sql.":".$keys[$i];
 
-            if($i!=count(array_keys($info))-1)
-            $sql = $sql.",";
+            if($i!=count($keys)-1)
+             $sql = $sql.",";
         }
 
-        $sql = $sql.")";
+         $sql = $sql.")";
 
-        echo $sql;
+         $stmt = $this->pdo->prepare($sql);
+
+        foreach($info as $name=>&$value){
+
+            if($name == "img" and $value != ''){
+                $ext = strtolower(substr($_FILES['imagem']['name'],-4)); 
+                $new_name = date("Y.m.d-H.i.s") . $ext; 
+                $value = $new_name;
+                $dir = '../Upload/'; 
+                move_uploaded_file($_FILES['imagem']['tmp_name'], $dir.$new_name); 
+            }
+
+            if($value=="")  
+             $value = "undefined";
+            
+            
+            $stmt->bindParam(":".$name,$value, PDO::PARAM_STR);
+ 
+        }
+        
+        try{
+            $stmt->execute();
+            return "OK!";
+        }
+        catch(Exception $e){
+          return $e->getMessage();
+        }
 
     }
 
@@ -134,8 +161,8 @@ class Adm{
 
             case 0:
 
-                $erro = "Você possui números no nome ou sobrenome, e, a não ser que você seja filho do Elon Musk, isso não é possivel<br>
-                <br><a href='usuario/cadastro.html'>Volte e cadastre-se novamente</a>";
+                $erro = "Email ou Senha incorretos<br>
+                <br><a href='usuario/cadastro.html'>Volte e loge-se novamente</a>";
 
             break;
 

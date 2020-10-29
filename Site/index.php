@@ -24,17 +24,8 @@ if(!isset($_SESSION))
 if (!isset($_GET['erro'])){
     if(isset($_SESSION['login']))
         if($_SESSION['login'] != 0){
-    
-    
-     $sql = "Select nome,sobrenome from Usuario where codUsuario = :cod";
 
-     $stmt = $pdo->prepare($sql); 
-     $stmt->bindParam(":cod", $_SESSION['login'], PDO::PARAM_STR); 
-     $stmt->execute();
-
-     $login = $stmt->fetchAll();
-
-     echo "Bem vindo usuario ".$login[0]['nome'];
+     echo "Bem vindo usuario ".$_SESSION['nome'];
      echo "<br><br><form method='POST'><button type='submit' value='true' name='logout'>deslogar</button></form>";   
     }
 }else
