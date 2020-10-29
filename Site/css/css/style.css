@@ -20,6 +20,13 @@ a {
   a:hover {
     text-decoration: none; }
 
+.fotoIcon{
+  max-width:40px;
+    max-height:30px;
+    width: auto;
+    height: auto;
+}
+
 .text-black {
   color: #000; }
 
