@@ -7,7 +7,7 @@ class Adm{
     }
 
     
-
+//função para registro geral
     public function register($table,$info){
 
         $sql = "INSERT INTO ";
@@ -18,19 +18,19 @@ class Adm{
 
             case 0:
 
-                $sql = $sql."Plantas(nomePlanta, tipoPlanta, imgPlanta, estoquePlanta,img) VALUES(";
+                $sql = $sql."Plantas(nomePlanta, tipoPlanta, estoquePlanta,img) VALUES(";
 
             break;
 
             case 1:
 
-             $sql = $sql."Usuario(nomeUsuario, sobrenome, email, senha, dataNasc, CPF, genero, telefone,img) VALUES("; 
+             $sql = $sql."Usuario(nomeUsuario, sobrenome, email, senha, dataNasc, CPF, genero, telefone, img) VALUES("; 
 
             break;
 
             case 2:
 
-             $sql = $sql."Produtos(nomeProdutos, estoqueProdutos, tipoProdutos, imgProdutos,img) VALUES(";
+             $sql = $sql."Produtos(nomeProdutos, estoqueProdutos, tipoProdutos, img) VALUES(";
 
             break;
 
@@ -76,6 +76,7 @@ class Adm{
 
     }
 
+//função para visualização geral de tabelas
     public function view($table){
 
         $sql = "select * from ";
@@ -111,6 +112,8 @@ class Adm{
 
     }
 
+
+//função de deletamento geral
     public function delete($table,$cod){
 
         $sql = "DELETE FROM ";

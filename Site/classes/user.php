@@ -60,7 +60,7 @@ try{
 
          $cad = $adm->register(1,$infos);
                             
-         var_dump($cad);
+         
 
          if($cad != "OK!"){
             // descomente isso para achar erros ->
