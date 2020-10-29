@@ -32,6 +32,7 @@ try{
          if($login != 0){
           $_SESSION['login'] = $login[0]; 
           $_SESSION['nome'] = $login[1];
+          $_SESSION['perfilPicture'] = $login[2];
          }else
           $link = $link."?erro=0";
          
@@ -70,7 +71,9 @@ try{
             $login = $obj->login($_POST['email'],$_POST['senha']);
           $_SESSION['login'] = $login[0]; 
           $_SESSION['nome'] = $login[1];
+          $_SESSION['perfilPicture'] = $login[2];
          }
+
          break;
 
 

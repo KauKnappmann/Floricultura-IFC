@@ -26,7 +26,10 @@ if (!isset($_GET['erro'])){
         if($_SESSION['login'] != 0){
 
      echo "Bem vindo usuario ".$_SESSION['nome'];
+     echo "<img src='Upload/".$_SESSION['perfilPicture']."'>";
      echo "<br><br><form method='POST'><button type='submit' value='true' name='logout'>deslogar</button></form>";   
+     
+
     }
 }else
  echo $adm->mensagemErro($_GET['erro']);
