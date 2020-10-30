@@ -7,22 +7,19 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700"> 
     <link rel="stylesheet" href="css/fonts/icomoon/style.css">
-
     <link rel="stylesheet" href="css/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/css/magnific-popup.css">
     <link rel="stylesheet" href="css/css/jquery-ui.css">
     <link rel="stylesheet" href="css/css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/css/style.css">
     <link rel="icon" href="css/Images/logoVerde.png" type="image/x-icon" />
-
     <link rel="stylesheet" href="css/css/aos.css">
-
     <link rel="stylesheet" href="css/css/style.css">
+    <script type="text/javascript" src="css/js/cards.js"></script>
     <!-- <script>
       
       alert("Programador, não esqueça de atualizar o git");
-    
+      
       </script> -->
   </head>
   <body>
@@ -85,50 +82,65 @@
       </div>
     </div>
     
-    <!-- <img src="css/images/background.jpg" style="background-repeat: no-repeat; background-size: cover; background-position: center; width: 100%;"> -->
-    
-    <div class="site-blocks-cover inner-page" style="background-image: url('css/images/background.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center">
-      <div class="member-info">
-        <div class="member-info-content">
-          <h4>{{nome}}</h4>
-          
-          <div class="social">
-            <a href=""><i class="fa fa-twitter"></i></a>
-            <a href=""><i class="fa fa-facebook"></i></a>
-            <a href=""><i class="fa fa-google-plus"></i></a>
-            <a href=""><i class="fa fa-linkedin"></i></a>
-          </div>
-        </div>
-      </div>
+    <div class="custom-border-bottom py-3">
       <div class="container">
         <div class="row">
-        
+          <div class="col-md-12 mb-0"><a href="index.html">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Carrinho de compras</strong></div>
         </div>
       </div>
     </div>
-    {{produtos}}
-    <footer class="site-footer custom-border-top">
-      <div class="container">
-        <div class="row pt-5 mt-5 text-center">
-          <div class="col-md-12">
-            <p>
-            Developed by Alessandra, Camila, Diógenes, Hanattan, Kauana, Maria and Mateus <br> &copy;<script>document.write(new Date().getFullYear());</script> <i class="icon-heart" aria-hidden="true"></i>
-            </p>
+    
+    <!-- img de fundo -->
+    <div class="site-blocks-cover inner-page" style="background-image: url('css/images/background.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center">
+        <div class="container">
+          <div class="row">
+          
           </div>
         </div>
       </div>
-    </footer>
-  </div>
-
-  <script src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/jquery-ui.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
-
-  <script src="js/main.js"></script>
-    
-  </body>
+  
+      <div class="site-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-7">
+  
+              <form action="#" method="post">
+                
+                <div class="p-3 p-lg-5 border">
+                  <div class="form-group row">
+                    <div class="col-md-12">
+                        <h2 class="h3 mb-3 text-black">Carrinho</h2>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="c_fname" class="text-black">Calcule o frete dos produtos</label>
+                        <input type="text" class="form-control" id="c_fname" name="c_fname">
+                      </div>
+                   </div>
+                </div>
+              </form>
+            </div>
+            <div class="col-md-5 ml-auto">
+              <div class="p-4 border mb-3">
+                <span class="d-block text-primary h6 text-uppercase">Subtotal</span>
+                <p class="mb-0">R. Abraham Lincoln, 210 - Jardim América, Rio do Sul - SC, 89160-202</p>
+              </div>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <footer class="site-footer custom-border-top">
+        <div class="container">
+          <div class="row">
+            
+            <div class="col-md-6 col-lg-3">
+              <div class="block-5 mb-5">
+                <h3 class="footer-heading mb-4">Informações para Contato</h3>
+                <ul class="list-unstyled">
+                  <li class="address">R. Abraham Lincoln, 210 - Jardim América, Rio do Sul - SC, 89160-202</li>
+                  <li class="phone"><a href="tel://55473525-8600">+55 (47)3525-8600</a></li>
+                  <li class="email">netree@gmail.com</li>
+                </ul>
+              </div>
 </html>
