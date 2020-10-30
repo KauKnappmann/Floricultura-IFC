@@ -15,56 +15,62 @@
     <link rel="stylesheet" href="../css/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="../css/css/aos.css">
     <link rel="stylesheet" href="../css/css/style.css">
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
   </head>
-
-  <a href="../index.php" style="font-size: 40px;" class="close" aria-label="Close" >
-    <span aria-hidden="true">&times;</span>
-  </a>
-
+  <body>
     <div class="site-section">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col"></div>
-            <div class="col">
-            <h2 class="h3 mb-3 text-black">Login</h2>
+          <div class="col">
+            <h2 class="h3 mb-3 text-black">Cadastro de Produtos</h2>
           </div>
           <div class="col"></div>
         </div>
         <div class="row">
           <div class="col"></div>
           <div class="col">
-
-            <form action="../classes/user.php" method="post">
+            <form action="../classes/user.php" method="post" enctype="multipart/form-data">
               
               <div class="p-3 p-lg-5 border">
                 <div class="form-group row">
                   <div class="col-md-12">
-                    <label for="c_email" class="text-black">E-mail</label>
-                    <input type="email" class="form-control" id="c_email" name="email" required>
+                    <label for="imagem" class="text-black">Foto do Produto</label>
+                    <input type="file" class="form-control" id="imagem" name="imagem" multiple="multiple">
+                    <div class="galeria"></div>
                   </div>
                 </div>
                 <div class="form-group row">
                   <div class="col-md-12">
-                    <label for="c_password" class="text-black">Senha</label>
-                    <input type="password" class="form-control" id="c_password" name="senha" required>
+                    <label for="nomeProdutos" class="text-black">Nome do Produto<span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="nomeProdutos" name="nomeProdutos" 
+                    pattern="([aA-zZ]+)" title="Neste campo só são permitidas letras." required>
+                  </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-12">
+                      <label for="tipoProdutos" class="text-black">Tipo do Produto<span class="text-danger">*</span></label>
+                      <input type="text" class="form-control" id="tipoProdutos" name="tipoProdutos" 
+                      pattern="([aA-zZ]+)" title="Neste campo só são permitidas letras." required>
+                    </div>
+                  </div>
+                <div class="form-group row">
+                  <div class="col-md-12">
+                    <label for="eestoqueProdutos" class="text-black">Quantidade<span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="eestoqueProdutos" name="eestoqueProdutos" 
+                    pattern="[0-9]+" title="São permitidos caracteres de A - Z ou de 0 - 9, ( _ ), ( - ) e ( . ), sem espaço e sem acentuação." required>
                   </div>
                 </div>
                 <div class="form-group row">
                   <div class="col-lg-12">
-                    <button style="background-color:#4bbf7d; border-color:#4bbf7d;" type="submit" class="btn btn-primary btn-lg btn-block" value="0" name="doit">Entrar</button>
-                    <a style="color:#4bbf7d;" href="cadastro.html" title="Cadastre-se">Não é cadastrado? Cadastre-se!</a>
+                    <button style="background-color:#4bbf7d; border-color:#4bbf7d;" type="submit" class="btn btn-primary btn-lg btn-block" value="0" name="doit">Cadastrar</button>
                   </div>
                 </div>
               </div>
             </form>
           </div>
           <div class="col"></div>
-        </div>
-      </div>
-    </div>
-
-    <body>
 
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/jquery-ui.js"></script>
@@ -78,3 +84,4 @@
     
   </body>
 </html>
+

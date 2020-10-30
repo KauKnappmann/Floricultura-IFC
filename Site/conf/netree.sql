@@ -31,7 +31,8 @@ tipoPlanta VARCHAR(50),
 img VARCHAR(100),
 estoquePlanta VARCHAR(100)
 );
-
+select * from plantas;
+drop table plantas;
 CREATE TABLE produtos(
 codProdutos INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 nomeProdutos VARCHAR(50),
