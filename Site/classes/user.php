@@ -3,22 +3,20 @@ try{
     include_once "../conf/Conexao.php";
     require "mainUsers.php";
     require "adm.php";
-    
-    } catch(Exception $e){
-         echo "Erro: ". $e->getMessage();
-        }
-
-     $do = isset($_POST['doit']) ? $_POST['doit'] : 0;
-        
+     
      $obj = new User(Conexao::getInstance());
 
      $adm = new Adm(Conexao::getInstance());
 
+   } catch(Exception $e){
+      echo "Erro: ". $e->getMessage();
+     }
+
+     $do = isset($_POST['doit']) ? $_POST['doit'] : 0;
+
         $link = "location:../index.php";
 
     switch($do){
-
-        
 
         case 0; //login
         
@@ -35,7 +33,6 @@ try{
           $_SESSION['perfilPicture'] = $login[2];
          }else
           $link = $link."?erro=0";
-         
          
         break;
 
