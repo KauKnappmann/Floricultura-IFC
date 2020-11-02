@@ -19,7 +19,7 @@ Class User{
          //função de login
     public function login($email,$senha){
    
-             $sql = "Select codUsuario,nomeUsuario,img from Usuario where email = :email and senha = :senha";
+             $sql = "Select codUsuario,nome,img from Usuario where email = :email and senha = :senha";
    
              $stmt = $this->pdo->prepare($sql); 
              $stmt->bindParam(":email", $email, PDO::PARAM_STR); 
@@ -39,7 +39,7 @@ Class User{
 
 
         
-         $sql = 'INSERT INTO Usuario(nomeUsuario,sobrenome,email,senha,dataNasc,CPF,genero,telefone,img) 
+         $sql = 'INSERT INTO Usuario(nome,sobrenome,email,senha,dataNasc,CPF,genero,telefone,img) 
          VALUES(:nome,:sobrenome,:email,:senha,:dataNasc,:CPF,:genero,:telefone,:imagem)';
 
          $stmt = $this->pdo->prepare($sql);

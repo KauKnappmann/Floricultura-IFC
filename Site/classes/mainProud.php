@@ -1,7 +1,7 @@
 <?php 
 
 class Plant{
-    private $sql
+    private $sql;
 
     public function __construct($pdo){
         $this->pdo = $pdo;

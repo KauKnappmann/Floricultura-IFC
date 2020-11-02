@@ -6,15 +6,17 @@ DROP TABLE Usuario;
 CREATE TABLE Usuario(
 	codUsuario INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	nome VARCHAR(50),
-    sobrenome VARCHAR(50),
+  	sobrenome VARCHAR(50),
 	email VARCHAR(100) UNIQUE,
 	senha VARCHAR(12),
 	dataNasc DATE,
 	CPF VARCHAR(11),
 	genero VARCHAR (20),
 	telefone VARCHAR(20),
-    img VARCHAR(100)
-    );
+  	img VARCHAR(100),
+	ativo BOOLEAN DEFAULT FALSE,
+	hashPassword VARCHAR(255) 
+);
     
    # ALTER TABLE Usuario
     #ADD COLUMN ativo BOOLEAN DEFAULT false;
