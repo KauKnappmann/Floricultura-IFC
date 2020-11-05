@@ -10,4 +10,6 @@ $adm = new Adm(Conexao::getInstance());
 
 $adm->view(0);
 
+
+
 ?>
