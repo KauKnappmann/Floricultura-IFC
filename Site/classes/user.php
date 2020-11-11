@@ -50,6 +50,7 @@ try{
           'CPF' => $_POST['CPF'],
           'genero' => $_POST['genero'],
           'telefone' => $_POST['telefone'],
+          'hashPassword' => "",
           'img' => $_FILES['imagem']['name']
          );
 

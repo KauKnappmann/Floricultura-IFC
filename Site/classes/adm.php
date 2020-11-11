@@ -24,7 +24,7 @@ class Adm{
 
             case 1:
 
-             $sql = $sql."Usuario(nomeUsuario, sobrenome, email, senha, dataNasc, CPF, genero, telefone, img) VALUES("; 
+             $sql = $sql."Usuario(nome, sobrenome, email, senha, dataNasc, CPF, genero, telefone, hashPassword, img) VALUES("; 
 
             break;
 
