@@ -17,63 +17,59 @@
     <link rel="stylesheet" href="../css/css/style.css">
     <style>
       body{
-        background-image:linear-gradient(#FFFFFF, #d74f45);
+        background-image:linear-gradient( #FFFFFF 1%,#4BBF7D 99%);
       }
     </style>
   </head>
 
-  <a href="../index.php" style="font-size: 40px;" class="close" aria-label="Close" >
-    <span aria-hidden="true">&times;</span>
-  </a>
-
-    <div class="site-section">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col"></div>
-            <div class="col">
-            <h2 class="h3 mb-3 text-black">Login</h2>
-          </div>
-          <div class="col"></div>
-        </div>
-        <div class="row">
-          <div class="col"></div>
-          <div class="col">
-
-            <form action="../classes/user.php" method="post">
-              
-              <div class="p-3 p-lg-5 border">
-                <div class="form-group row">
-                  <div class="col-md-12">
-                    <label for="c_email" class="text-black">E-mail</label>
-                    <input type="email" class="form-control" id="c_email" name="email" required>
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <div class="col-md-12">
-                    <label for="c_password" class="text-black">Senha</label>
-                    <input type="password" class="form-control" id="c_password" name="senha" required>
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <div class="col-lg-12">
-                    <button style="background-color:#4bbf7d; border-color:#4bbf7d;" type="submit" class="btn btn-primary btn-lg btn-block" value="0" name="doit">Entrar</button>
-                    <a style="color:#4bbf7d;" href="cadastro.html" title="Cadastre-se">Não é cadastrado? Cadastre-se!</a>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="col"></div>
-        </div>
-      </div>
-    </div>
 
     <body>
-     
-              <p>
-              Developed by Alessandra, Camila, Diógenes, Hanattan, Kauana, Maria and Mateus <br> &copy;<script>document.write(new Date().getFullYear());</script> <i class="icon-heart" aria-hidden="true"></i>
-              </p>
-         
+      <a href="../home.php" style="font-size: 40px;" class="close" aria-label="Close" >
+        <span aria-hidden="true">&times;</span>
+      </a>
+    
+        <div class="site-section">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col"></div>
+                <div class="col">
+                <u><h2 class="h3 mb-3 text-black">Login</h2></u>
+              </div>
+              <div class="col"></div>
+            </div>
+            <div class="row">
+              <div class="col"></div>
+              <div class="col">
+    
+                <form action="../classes/user.php" method="post" style="background-color: #FFFFFF;">
+                  
+                  <div class="p-3 p-lg-5 border">
+                    <div class="form-group row">
+                      <div class="col-md-12">
+                        <label for="c_email" class="text-black">E-mail</label>
+                        <input type="email" class="form-control" id="c_email" name="email" required>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="col-md-12">
+                        <label for="c_password" class="text-black">Senha</label>
+                        <input type="password" class="form-control" id="c_password" name="senha" required>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="col-lg-12">
+                        <button style="background-color:#4bbf7d; border-color:#4bbf7d;" type="submit" class="btn btn-primary btn-lg btn-block" value="0" name="doit">Entrar</button>
+                        <a style="color:#4bbf7d;" href="cadastro.html" title="Cadastre-se">Não é cadastrado? Cadastre-se!</a>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="col"></div>
+            </div>
+          </div>
+        </div>
+    <h6><center>Developed by Alessandra, Camila, Diógenes, Hanattan, Kauana, Maria and Mateus <br> &copy;<script>document.write(new Date().getFullYear());</script> <i class="icon-heart" aria-hidden="true"></i></center></h6>
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/jquery-ui.js"></script>
   <script src="js/popper.min.js"></script>
