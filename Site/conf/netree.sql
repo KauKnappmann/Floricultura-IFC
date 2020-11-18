@@ -57,9 +57,9 @@ CREATE TABLE administrador(
 #início de inserção de dados
 
 INSERT INTO plantas(nomePlanta, tipoPlanta, img, estoquePlanta)
-VALUES('Copo de Leite', 'Flor', 'cp.png', 2),
-('Flor do campo', 'Flor', 'flor.jpeg', 25),
-('Girassol', 'Flor', 'grss.png', 48),
+VALUES('Copo de Leite', 'Flor', 'copo-de-leite-3.jpg', 2),
+('Flor do campo', 'Flor', 'flores-do-campo-1.jpg', 25),
+('Girassol', 'Flor', 'arranjo-girassois-3.jpg', 48),
 ('Suculenta', 'Suculenta', 'sucu.jpeg', 2),
 ('Amarílis Vermelha', 'Flor', 'av.png', 23),
 ('Amor Perfeito', 'Flor', 'ap.png', 10),
