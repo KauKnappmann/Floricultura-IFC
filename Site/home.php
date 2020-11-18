@@ -49,7 +49,7 @@ if (!isset($_GET['erro'])){
 }else
  echo $adm->mensagemErro($_GET['erro']);
 
-    $plantas = $adm->view(0);
+    $plantas = $adm->view("plantas");
     $plantas_sub = "";
 
     if(count($plantas)>0)

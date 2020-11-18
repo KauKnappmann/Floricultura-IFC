@@ -1,6 +1,6 @@
 <?php 
 //setting params
-require_once ('Upload.class.php');
+
 
 
     
@@ -68,7 +68,7 @@ Class User{
  }
 
         try{
-        $stmt->execute();
+        
         //$token = sha1($email)
          return "OK!";
           }

@@ -76,7 +76,8 @@ try{
 
     }
     //comente isso para procurar erros:
-      header($link);
+    var_dump($link);
+      //header($link);
 
 
    // quando for procurar busgs, lembre-se de olhar o banco de dados no MySql, tem algumas coisas como limite de caracteres que pode 

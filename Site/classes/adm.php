@@ -18,13 +18,13 @@ class Adm{
 
             case 0:
 
-                $sql = $sql."Plantas(nomePlanta, tipoPlanta, estoquePlanta,img) VALUES(";
+             $sql = $sql."Plantas(nomePlanta, tipoPlanta, estoquePlanta,img) VALUES(";
 
             break;
 
             case 1:
 
-             $sql = $sql."Usuario(nomeUsuario, sobrenome, email, senha, dataNasc, CPF, genero, telefone, img) VALUES("; 
+             $sql = $sql."Usuario(nome, sobrenome, email, senha, dataNasc, CPF, genero, telefone,ativo,hashPassword, img) VALUES("; 
 
             break;
 
@@ -71,6 +71,7 @@ class Adm{
             return "OK!";
         }
         catch(Exception $e){
+            //substitua para getMessage para achar erros
           return $e->getMessage();
         }
 
@@ -81,29 +82,7 @@ class Adm{
 
         $sql = "select * from ";
 
-        switch ($table){
-
-            case 0:
-
-                 $sql = $sql."plantas";
-
-            break;
-
-            case 1:
-
-             $sql = $sql."Usuario"; 
-
-
-            break;
-
-            case 2:
-
-             $sql = $sql."produtos";
-
-            break;
-
-
-        }
+        $sql = $sql.$table;
 
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute();
@@ -155,6 +134,74 @@ class Adm{
     
     }
 
+    public function upload($table,$info){
+
+        $sql = "INSERT INTO ";
+
+        $keys = array_keys($info);
+
+        switch ($table){
+
+            case 0:
+
+             $sql = $sql."Plantas(nomePlanta, tipoPlanta, estoquePlanta,img) VALUES(";
+
+            break;
+
+            case 1:
+
+             $sql = $sql."Usuario(nome, sobrenome, email, senha, dataNasc, CPF, genero, telefone,ativo,hashPassword, img) VALUES("; 
+
+            break;
+
+            case 2:
+
+             $sql = $sql."Produtos(nomeProdutos, estoqueProdutos, tipoProdutos, img) VALUES(";
+
+            break;
+
+        }
+
+        for($i=0;$i<count($info);$i++){
+            
+             $sql = $sql.":".$keys[$i];
+
+            if($i!=count($keys)-1)
+             $sql = $sql.",";
+        }
+
+         $sql = $sql.")";
+
+         $stmt = $this->pdo->prepare($sql);
+
+        foreach($info as $name=>&$value){
+
+            if($name == "img" and $value != ''){
+                $ext = strtolower(substr($_FILES['imagem']['name'],-4)); 
+                $new_name = date("Y.m.d-H.i.s") . $ext; 
+                $value = $new_name;
+                $dir = '../Upload/'; 
+                move_uploaded_file($_FILES['imagem']['tmp_name'], $dir.$new_name); 
+            }
+
+            if($value=="")  
+             $value = "undefined";
+            
+            
+            $stmt->bindParam(":".$name,$value, PDO::PARAM_STR);
+ 
+        }
+        
+        try{
+            $stmt->execute();
+            return "OK!";
+        }
+        catch(Exception $e){
+            //substitua para getMessage para achar erros
+          return $e->getMessage();
+        }
+
+    }
 
     public function mensagemErro($erro){
 
@@ -183,7 +230,12 @@ class Adm{
 
             break;
 
+            case 2345678:
 
+                    //exemplo
+                $erro = "ta na hora de molhar o biscoito";
+
+            break;
 
              
 
