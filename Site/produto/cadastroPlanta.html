@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>NeTree</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700"> 
+    <link rel="stylesheet" href="../css/fonts/icomoon/style.css">
+    <link rel="icon" href="../css/Images/logoVerde.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/css/magnific-popup.css">
+    <link rel="stylesheet" href="../css/css/jquery-ui.css">
+    <link rel="stylesheet" href="../css/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../css/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../css/css/aos.css">
+    <link rel="stylesheet" href="../css/css/style.css">
+    <!-- <script>
+      
+      alert("Programador, não esqueça de atualizar o git");
+      
+      </script> -->
+  </head>
+  <body>
+    <div class="site-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col"></div>
+          <div class="col">
+            <h2 class="h3 mb-3 text-black">Cadastro de Plantas</h2>
+          </div>
+          <div class="col"></div>
+        </div>
+        <div class="row">
+          <div class="col"></div>
+          <div class="col">
+            <form action="../classes/user.php" method="post" enctype="multipart/form-data">
+              
+              <div class="p-3 p-lg-5 border">
+                <div class="form-group row">
+                  <div class="col-md-12">
+                    <label for="imagem" class="text-black">Foto da Planta</label>
+                    <input type="file" class="form-control" id="imagem" name="imagem">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-md-12">
+                    <label for="nomePlanta" class="text-black">Nome da Planta<span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="nomePlanta" name="nomePlanta" 
+                    pattern="([aA-zZ]+)" title="Neste campo só são permitidas letras." required>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-md-12">
+                    <label for="tipoPlanta" class="text-black">Tipo da Planta<span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="tipoPlanta" name="tipoPlanta" 
+                    pattern="([aA-zZ]+)" title="Neste campo só são permitidas letras." required>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-md-12">
+                    <label for="estoquePlanta" class="text-black">Quantidade<span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="estoquePlanta" name="estoquePlanta" 
+                    pattern="[0-9]+" title="São permitidos caracteres de A - Z ou de 0 - 9, ( _ ), ( - ) e ( . ), sem espaço e sem acentuação." required>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-lg-12">
+                    <button style="background-color:#4bbf7d; border-color:#4bbf7d;" type="submit" class="btn btn-primary btn-lg btn-block" value="0" name="doit">Cadastrar</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col"></div>
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+
+  <script src="js/main.js"></script>
+    
+  </body>
+</html>
+

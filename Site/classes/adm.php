@@ -134,29 +134,29 @@ class Adm{
     
     }
 
-    public function upload($table,$info){
+    public function update($table,$info,$cod){
 
-        $sql = "INSERT INTO ";
-
+        $sql = "UPDATE ";
+        
         $keys = array_keys($info);
 
         switch ($table){
 
             case 0:
 
-             $sql = $sql."Plantas(nomePlanta, tipoPlanta, estoquePlanta,img) VALUES(";
+             $sql = $sql."plantas SET ";
 
             break;
 
             case 1:
 
-             $sql = $sql."Usuario(nome, sobrenome, email, senha, dataNasc, CPF, genero, telefone,ativo,hashPassword, img) VALUES("; 
+             $sql = $sql."Usuario SET "; 
 
             break;
 
             case 2:
 
-             $sql = $sql."Produtos(nomeProdutos, estoqueProdutos, tipoProdutos, img) VALUES(";
+             $sql = $sql."produtos SET ";
 
             break;
 
@@ -164,14 +164,14 @@ class Adm{
 
         for($i=0;$i<count($info);$i++){
             
-             $sql = $sql.":".$keys[$i];
+             $sql = $sql.$keys[$i]." = :".$keys[$i];
 
             if($i!=count($keys)-1)
              $sql = $sql.",";
         }
 
-         $sql = $sql.")";
-
+         $sql = $sql." WHERE cod =".$cod;
+        echo $sql;
          $stmt = $this->pdo->prepare($sql);
 
         foreach($info as $name=>&$value){
