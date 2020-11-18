@@ -54,7 +54,7 @@ if (!isset($_GET['erro'])){
 
     if(count($plantas)>0)
     foreach($plantas as $planta){   
-        $plantas_sub = $plantas_sub."<img src='css/Images/".$planta['img']."'><br>\n";
+        $plantas_sub = $plantas_sub."<img class='fotoIcon' src='Upload/Plantas/".$planta['img']."'><br>\n";
         $plantas_sub = $plantas_sub."<h3>".$planta['nomePlanta']."</h3>\n";
         $plantas_sub = $plantas_sub."<h5>".$planta['tipoPlanta']."</h5><br><br>\n\n";
     }
