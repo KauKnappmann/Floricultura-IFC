@@ -6,6 +6,25 @@ class Adm{
         $this->pdo = $pdo;
     }
 
+//login
+    public function login($email,$senha){
+   
+        $sql = "Select cod,nome,img from Usuario where email = :email and senha = :senha";
+
+        $stmt = $this->pdo->prepare($sql); 
+        $stmt->bindParam(":email", $email, PDO::PARAM_STR); 
+        $stmt->bindParam(":senha", $senha, PDO::PARAM_STR); 
+        $stmt->execute();
+
+        $login = $stmt->fetchAll();
+        if(count($login) > 0)
+        return array($login[0]["cod"],$login[0]["nome"],$login[0]["img"]);
+          
+        else
+        return "0";
+
+}
+
     
 //função para registro geral
     public function register($table,$info){
@@ -24,7 +43,7 @@ class Adm{
 
             case 1:
 
-             $sql = $sql."Usuario(nome, sobrenome, email, senha, dataNasc, CPF, genero, telefone,ativo,hashPassword, img) VALUES("; 
+             $sql = $sql."Usuario(nome, sobrenome, email, senha, dataNasc, CPF, genero, telefone, img) VALUES("; 
 
             break;
 
@@ -54,7 +73,7 @@ class Adm{
                 $ext = strtolower(substr($_FILES['imagem']['name'],-4)); 
                 $new_name = date("Y.m.d-H.i.s") . $ext; 
                 $value = $new_name;
-                $dir = '../Upload/'; 
+                $dir = '../../Upload/'; 
                 move_uploaded_file($_FILES['imagem']['tmp_name'], $dir.$new_name); 
             }
 
@@ -72,7 +91,7 @@ class Adm{
         }
         catch(Exception $e){
             //substitua para getMessage para achar erros
-          return $e->getMessage();
+          return $e->getCode();
         }
 
     }
@@ -101,7 +120,7 @@ class Adm{
     
             case 0:
     
-                 $sql = $sql."Plantas WHERE codPlanta = ";
+             $sql = $sql."Plantas WHERE codPlanta = ";
     
             break;
     

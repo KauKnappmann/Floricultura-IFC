@@ -1,10 +1,10 @@
 <?php 
 try{
-    include_once "../conf/Conexao.php";
-    require "mainUsers.php";
-    require "adm.php";
+    include_once "../../conf/Conexao.php";
+
+    require "../adm.php";
      
-     $obj = new User(Conexao::getInstance());
+  
 
      $adm = new Adm(Conexao::getInstance());
 
@@ -14,7 +14,7 @@ try{
 
      $do = isset($_POST['doit']) ? $_POST['doit'] : 0;
 
-        $link = "location:../index.php";
+        $link = "location:../../home.php";
 
     switch($do){
 
@@ -25,7 +25,7 @@ try{
           session_start();
         
          
-          $login = $obj->login($_POST['email'],$_POST['senha']);
+          $login = $adm->login($_POST['email'],$_POST['senha']);
 
          if($login != 0){
           $_SESSION['login'] = $login[0]; 
@@ -42,7 +42,7 @@ try{
           session_start();
 
          $infos = array(
-          'nomeUsuario' => $_POST['nome'],
+          'nome' => $_POST['nome'],
           'sobrenome' => $_POST['sobrenome'],
           'email' => $_POST['email'],
           'senha' => $_POST['senha'],
@@ -65,7 +65,7 @@ try{
             $link = $link."?erro=".$cad;
             
          }else{     
-            $login = $obj->login($_POST['email'],$_POST['senha']);
+            $login = $adm->login($_POST['email'],$_POST['senha']);
           $_SESSION['login'] = $login[0]; 
           $_SESSION['nome'] = $login[1];
           $_SESSION['perfilPicture'] = $login[2];
@@ -76,8 +76,8 @@ try{
 
     }
     //comente isso para procurar erros:
-    var_dump($link);
-      //header($link);
+    //var_dump($_SESSION);
+      header($link);
 
 
    // quando for procurar busgs, lembre-se de olhar o banco de dados no MySql, tem algumas coisas como limite de caracteres que pode 

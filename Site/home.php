@@ -1,12 +1,10 @@
-
-    <?php
-    try{
+<?php
+        try{
 include_once "conf/Conexao.php";
-require "classes/mainUsers.php";
+
 require "classes/adm.php";
 
 $pdo = Conexao::getInstance();
-$user = new User($pdo);
 $adm = new Adm($pdo);
 }catch(Exception $e){
     echo $e->getCode();
@@ -34,7 +32,7 @@ if(!isset($_SESSION))
 if (!isset($_GET['erro'])){
     if(isset($_SESSION['login']))
         if($_SESSION['login'] != 0){
-
+            
             $html = str_replace('{{nome}}',"<center>BEM VINDO ".strtoupper($_SESSION['nome'])."</center>",$html);
 
      
@@ -45,10 +43,15 @@ if (!isset($_GET['erro'])){
 
     }else
     $html = str_replace('{{nome}}',"<p></p> ",$html);
+        
 
 }else
  echo $adm->mensagemErro($_GET['erro']);
 
+
+
+
+ //CATALOGO
     $plantas = $adm->view("plantas");
     $plantas_sub = "";
 
