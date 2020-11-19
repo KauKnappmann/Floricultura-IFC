@@ -8,11 +8,11 @@ class Product {
     private $quantidadeProduto;
  
     //Métodos
-    public function __construct($nomeProduto, $tipoProduto, $valorProduto, $quantidadeProduto){
+    public function __construct($nomeProduto, $valorProduto, $quantidadeProduto, TipoProduto $tp){
         $this->nomeProduto = $nomeProduto;
-        $this->tipoProduto = $tipoProduto;
         $this->valorProduto = $valorProduto;
         $this->quantidadeProduto = $quantidadeProduto;
+        $this->tipoProduto = $tp;
     }
 
     public function getNome(){
@@ -36,6 +36,14 @@ class Product {
 
         return true;
     } 
+
+    public function getTipoProduto(){
+        return $this->tipoProduto;
+    }
+
+    public function setTipoProduto($tipoProduto){
+        return $this->tipoProduto = $tipoProduto;
+    }
 
 
 }
