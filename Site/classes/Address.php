@@ -4,24 +4,31 @@ class Address
 {
     private $zipCode;
     private $street;
-    private $district;
     private $number;
+    private $district;
     private $city;
     private $state;
 
-    public function __construct(int $zipCode, string $street, string $district, int $number, string $city, string $state)
+    public function __construct($zipCode, $street, $number, $district, $city, $state)
     {
-        $this->zipCode=$zipCode;
-        $this->street=$street;
-        $this->district=$district;
-        $this->number=$number;
-        $this->city=$city;
-        $this->state=$state;
+        $this->zipCode = $zipCode;
+        $this->street = $street;
+        $this->number = $number;
+        $this->district = $district;
+        $this->city = $city;
+        $this->state = $state;
     }
 
-    public function addAddress()
+    public function listAddresses()
     {
-
+        echo '<br>';
+        echo 'ZIP Code: '.$this->zipCode.'<br>';
+        echo 'Street: '.$this->street.'<br>';
+        echo 'Number: '.$this->number.'<br>';
+        echo 'District: '.$this->district.'<br>';
+        echo 'City: '.$this->city.'<br>';
+        echo 'State: '.$this->state.'<br>';
+        echo '-----------------------------------------------'.'<br>';
     }
 
     public function searchAddress()
@@ -29,6 +36,10 @@ class Address
 
     }
 
+    public function deleteAddress()
+    {
+
+    }
 }
 
 ?>
