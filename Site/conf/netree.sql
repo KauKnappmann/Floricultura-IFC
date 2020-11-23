@@ -18,11 +18,13 @@ CREATE TABLE Usuario(
 	hashPassword VARCHAR(255) 
 );
     
-   # ALTER TABLE Usuario
-    #ADD COLUMN ativo BOOLEAN DEFAULT false;
+    ALTER TABLE Usuario
+    ADD COLUMN ativo BOOLEAN DEFAULT false;
     ALTER TABLE Usuario
     DROP COLUMN ativo;
     
+	ALTER TABLE Usuario
+    ADD COLUMN endereco VARCHAR(255);
     
     select * from Usuario;
 
