@@ -1,18 +1,22 @@
 <?php
 
-class Product {
+require_once('carrinho.php');
+
+class ProdutoCarrinho {
     //Atributos variaveis
     private $nomeProduto;
     private $tipoProduto;
     private $valorProduto;
     private $quantidadeProduto;
+    private $pedido;
  
     //Métodos
-    public function __construct($nomeProduto, $valorProduto, $quantidadeProduto, TipoProduto $tp){
+    public function __construct($nomeProduto, $valorProduto, $quantidadeProduto, TipoProduto $tp, $pedido){
         $this->nomeProduto = $nomeProduto;
         $this->valorProduto = $valorProduto;
         $this->quantidadeProduto = $quantidadeProduto;
         $this->tipoProduto = $tp;
+        $this->addPedidos($pedido);
     }
 
     public function getNome(){
@@ -44,6 +48,13 @@ class Product {
         return $this->tipoProduto = $tipoProduto;
     }
 
+    public function addPedidos($pedido){
+        $this->pedido[] = $pedido; 
+    }
+
+    public function getPedidos(){
+        return $this->pedido;
+    }
 
 }
 ?>
