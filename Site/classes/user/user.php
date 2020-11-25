@@ -64,7 +64,7 @@ try{
     }
     //comente isso para procurar erros:
     //var_dump($_SESSION);
-      //header($link);
+      header($link);
 
 
    // quando for procurar busgs, lembre-se de olhar o banco de dados no MySql, tem algumas coisas como limite de caracteres que pode 
