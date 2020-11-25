@@ -1,5 +1,7 @@
 <?php
 
+require_once('newUser.php');
+require_once('Address.php');
 class userTest
 {
     private $name;
@@ -48,6 +50,15 @@ class userTest
     public function getAddresses()
     {
         return $this->addresses;
+    }
+
+    public function displayAddresses()
+    {
+        foreach($this->addresses as $address)
+        {
+            $address->listAddresses();
+        }
+
     }
 
 }

@@ -9,9 +9,9 @@
     $address1 = new Address(89160202, 'Abraham Lincoln', 210, 'Jardim América', 'Rio do Sul', 'Santa Catarina');
     $address2 = new Address(89160000, 'Mafalda L. Porto', 93, 'Progresso', 'Rio do Sul', 'Santa Catarina');
 
-    $user1->addAddress($address1);
-
     $user2->addAddress($address1);
     $user2->addAddress($address2);
+
+    echo $user2->displayAddresses();
 
 ?>
