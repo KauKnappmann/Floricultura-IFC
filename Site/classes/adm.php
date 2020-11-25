@@ -37,7 +37,7 @@ class Adm{
 
             case 0:
 
-             $sql = $sql."Plantas(nomePlanta, tipoPlanta, estoquePlanta,img) VALUES(";
+             $sql = $sql."Plantas(nomePlanta, tipoPlanta, img,estoquePlanta) VALUES(";
 
             break;
 
