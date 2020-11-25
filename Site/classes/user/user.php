@@ -18,7 +18,31 @@ try{
 
     switch($do){
 
-        case 0; //login
+        case 0: //cadastro
+
+          $table = $_POST['table'];
+
+          $info = array();
+
+         foreach($_POST as $name=>$value)
+         if($name != 'table')
+            $info[$name] = $value;
+            
+         $info['img'] = $_FILES['imagem']['name'];
+         
+         var_dump($info);
+
+         $cad = $adm->register($table,$info);
+         var_dump($cad);
+         if($cad != "OK!" || $table != 1){
+            // descomente isso para achar erros ->
+         //   var_dump($cad); 
+         
+          $link = $link."?erro=".$cad;
+          break;
+         }
+         
+        case 1: //login
         
         //inicializa sessão
          if(!isset($_SESSION))
@@ -33,43 +57,6 @@ try{
           $_SESSION['perfilPicture'] = $login[2];
          }else
           $link = $link."?erro=0";
-         
-        break;
-
-        case 1; //cadastro
-
-         if(!isset($_SESSION))
-          session_start();
-
-         $infos = array(
-          'nome' => $_POST['nome'],
-          'sobrenome' => $_POST['sobrenome'],
-          'email' => $_POST['email'],
-          'senha' => $_POST['senha'],
-          'dataNasc' => $_POST['dataNasc'],
-          'CPF' => $_POST['CPF'],
-          'genero' => $_POST['genero'],
-          'telefone' => $_POST['telefone'],
-          'img' => $_FILES['imagem']['name']
-         );
-
-         //var_dump($infos);
-
-         $cad = $adm->register(1,$infos,"Usuario/");
-                            
-         
-
-         if($cad != "OK!"){
-            // descomente isso para achar erros ->
-         //   var_dump($cad); 
-            $link = $link."?erro=".$cad;
-            
-         }else{     
-            $login = $adm->login($_POST['email'],$_POST['senha']);
-          $_SESSION['login'] = $login[0]; 
-          $_SESSION['nome'] = $login[1];
-          $_SESSION['perfilPicture'] = $login[2];
-         }
 
          break;
 
@@ -77,7 +64,7 @@ try{
     }
     //comente isso para procurar erros:
     //var_dump($_SESSION);
-      header($link);
+      //header($link);
 
 
    // quando for procurar busgs, lembre-se de olhar o banco de dados no MySql, tem algumas coisas como limite de caracteres que pode 

@@ -27,7 +27,7 @@ class Adm{
 
     
 //função para registro geral
-    public function register($table,$info,$arch){
+    public function register($table,$info){
 
         $sql = "INSERT INTO ";
 
@@ -37,19 +37,22 @@ class Adm{
 
             case 0:
 
-             $sql = $sql."Plantas(nomePlanta, tipoPlanta, img,estoquePlanta) VALUES(";
+             $sql = $sql."plantas(nome, tipo, estoque,img) VALUES(";
+             $arch = "Plantas/";
 
             break;
 
             case 1:
 
              $sql = $sql."Usuario(nome, sobrenome, email, senha, dataNasc, CPF, genero, telefone, img) VALUES("; 
+             $arch = "Usuario/";
 
             break;
 
             case 2:
 
-             $sql = $sql."Produtos(nomeProdutos, estoqueProdutos, tipoProdutos, img) VALUES(";
+             $sql = $sql."produtos(nome, tipo, estoque, img) VALUES(";
+             $arch = "Produtos/";
 
             break;
 
@@ -91,7 +94,7 @@ class Adm{
         }
         catch(Exception $e){
             //substitua para getMessage para achar erros
-          return $e->getCode();
+          return $e->getMessage();
         }
 
     }
