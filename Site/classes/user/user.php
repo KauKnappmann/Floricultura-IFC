@@ -14,7 +14,7 @@ try{
 
      $do = isset($_POST['doit']) ? $_POST['doit'] : 0;
 
-        $link = "location:../../home.php";
+        $link = "location:../../produto/cadastroPlanta.html";
 
     switch($do){
 
