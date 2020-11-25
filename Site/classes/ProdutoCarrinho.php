@@ -49,7 +49,7 @@ class ProdutoCarrinho {
     }
 
     public function addPedidos($pedido){
-        $this->pedido[] = $pedido; 
+        $this->pedido[] = new Pedido($pedido); 
     }
 
     public function getPedidos(){
