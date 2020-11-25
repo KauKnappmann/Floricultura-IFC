@@ -35,6 +35,7 @@ estoque varchar(10)
 );
 select * from plantas;
 drop table plantas;
+
 CREATE TABLE produtos(
 cod INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 nome VARCHAR(50),
