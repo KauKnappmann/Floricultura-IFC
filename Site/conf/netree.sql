@@ -4,7 +4,7 @@ DROP DATABASE equipe3;
 
 DROP TABLE Usuario;
 CREATE TABLE Usuario(
-	codUsuario INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	cod INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	nome VARCHAR(50),
     sobrenome VARCHAR(50),
 	email VARCHAR(100) UNIQUE,
@@ -13,6 +13,8 @@ CREATE TABLE Usuario(
 	CPF VARCHAR(11),
 	genero VARCHAR (20),
 	telefone VARCHAR(20),
+    ativo BOOLEAN DEFAULT FALSE,
+    hashPassword VARCHAR(45),
     img VARCHAR(100)
     );
     
@@ -25,24 +27,24 @@ CREATE TABLE Usuario(
     select * from Usuario;
 
 CREATE TABLE plantas(
-codPlanta INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-nomePlanta VARCHAR(50),
-tipoPlanta VARCHAR(50),
+cod INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(50),
+tipo VARCHAR(50),
 img VARCHAR(100),
-estoquePlanta VARCHAR(100)
+estoque varchar(10)
 );
 select * from plantas;
 drop table plantas;
-
 CREATE TABLE produtos(
-codProdutos INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-nomeProdutos VARCHAR(50),
-estoqueProdutos INT,
-tipoProdutos VARCHAR(50),
+cod INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(50),
+estoque INT,
+tipo VARCHAR(50),
 img VARCHAR(100));
-
-CREATE TABLE compra(
-	codCompra INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+drop table produtos;
+drop table compras;
+CREATE TABLE compras(
+	cod INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	nomeCliente VARCHAR(50),   
 	cpfCliente VARCHAR(11),
 	nomeProdutos VARCHAR (50),
