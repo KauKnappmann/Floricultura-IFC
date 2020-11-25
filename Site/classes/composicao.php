@@ -6,12 +6,13 @@ require_once('Product.php');
 
 $tipoProduto = new TipoProduto('Planta');
 
-$meuProduto = new Produto('Suculentinha', 20, 4, $tipoProduto, 'uma suculentinha');
+$meuProduto = new ProdutoCarrinho('Suculentinha', 20, 4, $tipoProduto, 'uma suculentinha');
 
-echo $meuProduto->getPedido()->getPedidos();
+$meuProduto->addPedidos('cacto');
 
-$meuProduto->addPedido($meuProduto);
-
-
+foreach($meuProduto->getPedidos() as $pedido){
+    echo $pedido->getPedido();
+    echo "<br>";
+}
 
 ?>
