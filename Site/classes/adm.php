@@ -27,7 +27,7 @@ class Adm{
 
     
 //função para registro geral
-    public function register($table,$info){
+    public function register($table,$info,$arch){
 
         $sql = "INSERT INTO ";
 
@@ -73,7 +73,7 @@ class Adm{
                 $ext = strtolower(substr($_FILES['imagem']['name'],-4)); 
                 $new_name = date("Y.m.d-H.i.s") . $ext; 
                 $value = $new_name;
-                $dir = '../../Upload/'; 
+                $dir = '../../Upload/'.$arch; 
                 move_uploaded_file($_FILES['imagem']['tmp_name'], $dir.$new_name); 
             }
 

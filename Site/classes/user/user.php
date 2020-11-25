@@ -55,7 +55,7 @@ try{
 
          //var_dump($infos);
 
-         $cad = $adm->register(1,$infos);
+         $cad = $adm->register(1,$infos,"Usuario/");
                             
          
 
