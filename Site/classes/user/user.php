@@ -30,8 +30,8 @@ try{
             
          $info['img'] = $_FILES['imagem']['name'];
          
-         var_dump($info);
-
+         //var_dump($info);
+         
          $cad = $adm->register($table,$info);
          var_dump($cad);
          if($cad != "OK!" or $table != 1){

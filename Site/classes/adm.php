@@ -37,7 +37,7 @@ class Adm{
 
             case 0:
 
-             $sql = $sql."plantas(nome, tipo, estoque,img) VALUES(";
+             $sql = $sql."plantas(nome, tipo, estoque,valor,img) VALUES(";
              $arch = "Plantas/";
 
             break;
@@ -51,7 +51,7 @@ class Adm{
 
             case 2:
 
-             $sql = $sql."produtos(nome, tipo, estoque, img) VALUES(";
+             $sql = $sql."produtos(nome, tipo, estoque,valor, img) VALUES(";
              $arch = "Produtos/";
 
             break;

@@ -55,6 +55,7 @@ if (!isset($_GET['erro'])){
     $plantas = $adm->view("plantas");
     $plantas_sub = "";
 
+    
     if(count($plantas)>0)
     foreach($plantas as $planta){   
         $plantas_sub = $plantas_sub."<img class='fotoIcon' src='Upload/Plantas/".$planta['img']."'><br>\n";

@@ -14,8 +14,5 @@
 
         $link = "location:../../home.php";
 
-        nome VARCHAR(50),
-        tipo VARCHAR(50),
-        estoque INT, 
-        img
+      
 ?>

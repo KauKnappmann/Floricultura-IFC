@@ -30,8 +30,9 @@ CREATE TABLE plantas(
 cod INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 nome VARCHAR(50),
 tipo VARCHAR(50),
+valor double,
 img VARCHAR(100),
-estoque varchar(10)
+estoque INT
 );
 select * from plantas;
 drop table plantas;
@@ -41,6 +42,7 @@ cod INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 nome VARCHAR(50),
 estoque INT,
 tipo VARCHAR(50),
+valor double,
 img VARCHAR(100));
 drop table produtos;
 drop table compras;
