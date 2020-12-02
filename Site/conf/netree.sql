@@ -31,7 +31,8 @@ cod INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 nome VARCHAR(50),
 tipo VARCHAR(50),
 img VARCHAR(100),
-estoque varchar(10)
+estoque varchar(10),
+valor VARCHAR(50)
 );
 select * from plantas;
 drop table plantas;
