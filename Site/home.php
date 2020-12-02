@@ -37,7 +37,7 @@ if (!isset($_GET['erro'])){
 
      
      echo "Bem vindo usuario ".$_SESSION['nome'];
-     echo "<img class='fotoIcon' src='Upload/".$_SESSION['perfilPicture']."'>";
+     echo "<img class='fotoIcon' src='Upload/Plantas".$_SESSION['perfilPicture']."'>";
      echo "<br><br><form method='POST'><button type='submit' value='true' name='logout'>deslogar</button></form>";   
      
 
