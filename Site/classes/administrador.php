@@ -1,7 +1,7 @@
 <?php
-include_once('classUsuario.php');
+include_once('UsuarioBase.class.php');
 
-class Administrador extends Usuario{
+class Administrador extends UsuarioBase{
     private $IdUsuario;
 
 public function __construct($nome, $dataNasc, $email, $senha, $cpf, $telefone, $genero, $img, $idusu){
