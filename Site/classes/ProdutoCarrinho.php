@@ -19,9 +19,25 @@ class ProdutoCarrinho {
         $this->addPedidos($pedido);
     }
 
-    public function getNome(){
+
+    public function imprimir(){
+        $texto = "Nome: ".$this->getnomeProduto(). "Valor do produto: ".$this->getvalorProduto(). "Quantidade: ".$this->getquantidadeProduto(). "Tipo: ".$this->getTipoProduto();
+
+        return $texto;
+    }
+
+    public function getnomeProduto(){
         return $this->nomeProduto;
     }
+
+    public function getvalorProduto(){
+        return $this->valorProduto;
+    }
+
+    public function getquantidadeProduto(){
+        return $this->quantidadeProduto;
+    }
+
 
     // public function listarProduto($Id, $pdo){
     //     $sql = "SELECT * FROM produtos WHERE codProdutos =". $Id;

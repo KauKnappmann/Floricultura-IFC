@@ -19,17 +19,17 @@ class Address
         $this->state = $state;
     }
 
-    public function listAddresses()
-    {
-        echo '<br>';
-        echo 'ZIP Code: '.$this->zipCode.'<br>';
-        echo 'Street: '.$this->street.'<br>';
-        echo 'Number: '.$this->number.'<br>';
-        echo 'District: '.$this->district.'<br>';
-        echo 'City: '.$this->city.'<br>';
-        echo 'State: '.$this->state.'<br>';
-        echo '-----------------------------------------------'.'<br>';
-    }
+    // public function listAddresses()
+    // {
+    //     echo '<br>';
+    //     echo 'ZIP Code: '.$this->zipCode.'<br>';
+    //     echo 'Street: '.$this->street.'<br>';
+    //     echo 'Number: '.$this->number.'<br>';
+    //     echo 'District: '.$this->district.'<br>';
+    //     echo 'City: '.$this->city.'<br>';
+    //     echo 'State: '.$this->state.'<br>';
+    //     echo '-----------------------------------------------'.'<br>';
+    // }
 
     public function searchAddress()
     {
@@ -39,6 +39,34 @@ class Address
     public function deleteAddress()
     {
 
+    }
+
+    public function imprimir(){
+        $texto = "ZIP Code: ".$this->zipCode(). "Street: ".$this->street()."Number: ".$this->number(). "District: ".$this->district()."City: ".$this->city(). "State: ".$this->state();
+    }
+
+    public function getzipCode(){
+        return $this->zipCode;
+    }
+
+    public function getstreet(){
+        return $this->street;
+    }
+
+    public function getnumber(){
+        return $this->number;
+    }
+
+    public function getdistrict(){
+        return $this->district;
+    }
+
+    public function getcity(){
+        return $this->city;
+    }
+
+    public function getstate(){
+        return $this->state;
     }
 }
 

@@ -18,7 +18,7 @@ class Product {
     public function getNome(){
         return $this->nomeProduto;
     }
-
+    
     // public function listarProduto($Id, $pdo){
     //     $sql = "SELECT * FROM produtos WHERE codProdutos =". $Id;
 
