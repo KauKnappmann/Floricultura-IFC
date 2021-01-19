@@ -1,26 +1,28 @@
 <?php
 
-abstract class Pedido extends ProdutoCarrinho{
+require_once('ProdutoCarrinho.php');
+
+class Pedido extends ProdutoCarrinho{
        //Atributos variaveis
         private $pedido;
         private $numeroPedido;
         private $valorTotal;
  
     //Métodos
-    public function __construct($pedido){
+    public function __construct($pedido, $nomeProduto, $valorProduto, $quantidadeProduto, TipoProduto $tp){
         $this->pedido = $pedido;
+        parent::__construct($nomeProduto, $valorProduto, $quantidadeProduto, $tp, $pedido);
     }
 
     public function imprimir(){
         $texto = parent::imprimir();
-        $texto = "Valor total: ".$this->getvalorTotal();
+        $texto .= "Valor total: ".parent::getvalorTotal();
+
+        return $texto;
     }
 
-    public function getvalorTotal(){
-        return $this->valorTotal;
-    }
 
-    abstract public function calcularvalortotal();
+    // abstract public function calcularvalortotal();
 
     public function getPedido(){
         return $this->pedido;

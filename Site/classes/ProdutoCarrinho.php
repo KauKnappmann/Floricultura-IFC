@@ -1,8 +1,6 @@
 <?php
 
-require_once('carrinho.php');
-
-class ProdutoCarrinho {
+abstract class ProdutoCarrinho {
     //Atributos variaveis
     private $nomeProduto;
     private $tipoProduto;
@@ -16,12 +14,12 @@ class ProdutoCarrinho {
         $this->valorProduto = $valorProduto;
         $this->quantidadeProduto = $quantidadeProduto;
         $this->tipoProduto = $tp;
-        $this->addPedidos($pedido);
+        // $this->addPedidos($pedido);
     }
 
 
     public function imprimir(){
-        $texto = "Nome: ".$this->getnomeProduto(). "Valor do produto: ".$this->getvalorProduto(). "Quantidade: ".$this->getquantidadeProduto(). "Tipo: ".$this->getTipoProduto();
+        $texto = "Nome: ".$this->getnomeProduto(). "Valor do produto: ".$this->getvalorProduto(). "Quantidade: ".$this->getquantidadeProduto(). "Tipo: ".$this->getTipoProduto()->getTipoProduto();
 
         return $texto;
     }
@@ -64,12 +62,19 @@ class ProdutoCarrinho {
         return $this->tipoProduto = $tipoProduto;
     }
 
-    public function addPedidos($pedido){
-        $this->pedido[] = new Pedido($pedido); 
-    }
+    // public function addPedidos($pedido){
+    //     $this->pedido[] = new Pedido($pedido); 
+    // }
 
     public function getPedidos(){
         return $this->pedido;
+    }
+
+    public function getvalorTotal(){
+
+        $valorcalculado = $this->$valorProduto * $this->$quantidadeProduto;
+
+        return $valorcalculado;
     }
 
 }

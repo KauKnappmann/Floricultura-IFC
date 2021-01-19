@@ -2,16 +2,17 @@
 
 include_once('Address.php');
 
-class EnderecoResidencial extends Address{
+class EnderecoParaEntrega extends Address{
        //Atributos variaveis
         private $tipoImovel;
         private $Complemento;
+        private $horariodeentrega;
  
     //Métodos
 
     public function imprimir(){
         $texto = parent::imprimir();
-        $texto .= "Tipo de Imovel: ".$this->gettipoImovel();
+        $texto .= "Horário da Entrega: ".$this->gettipoImovel();
 
         return $texto;
     }
@@ -24,6 +25,9 @@ class EnderecoResidencial extends Address{
         return $this->Complemento;
     }
 
+    public function gethorariodeentrega(){
+        return $this->horariodeentrega;
+    }
     
 }
 ?>

@@ -43,6 +43,7 @@ class Address
 
     public function imprimir(){
         $texto = "ZIP Code: ".$this->zipCode(). "Street: ".$this->street()."Number: ".$this->number(). "District: ".$this->district()."City: ".$this->city(). "State: ".$this->state();
+        return $texto;
     }
 
     public function getzipCode(){
