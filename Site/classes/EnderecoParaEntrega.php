@@ -1,28 +1,23 @@
 <?php
 
-include_once('Address.php');
+include_once('EnderecoResidencial.php');
 
-class EnderecoParaEntrega extends Address{
+class EnderecoParaEntrega extends EnderecoResidencial{
        //Atributos variaveis
-        private $tipoImovel;
-        private $Complemento;
         private $horariodeentrega;
  
     //Métodos
+    public function __construct($zipCode, $street, $number, $district, $city, $state, $tipoImovel, $complemento, $horariodeentrega){
+        $this->horariodeentrega = $horariodeentrega;
+        parent::__construct($zipCode, $street, $number, $district, $city, $state, $tipoImovel, $complemento);
+    }
+
 
     public function imprimir(){
         $texto = parent::imprimir();
-        $texto .= "Horário da Entrega: ".$this->gettipoImovel();
+        $texto .= "<br>Horário da Entrega: ".$this->gethorariodeentrega();
 
         return $texto;
-    }
-
-    public function gettipoImovel(){
-        return $this->tipoImovel;
-    }
-
-    public function getComplemento(){
-        return $this->Complemento;
     }
 
     public function gethorariodeentrega(){

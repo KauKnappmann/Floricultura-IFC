@@ -19,7 +19,7 @@ abstract class ProdutoCarrinho {
 
 
     public function imprimir(){
-        $texto = "Nome: ".$this->getnomeProduto(). "Valor do produto: ".$this->getvalorProduto(). "Quantidade: ".$this->getquantidadeProduto(). "Tipo: ".$this->getTipoProduto()->getTipoProduto();
+        $texto = "Nome: ".$this->getnomeProduto(). "<br>Valor do produto: ".$this->getvalorProduto(). "<br>Quantidade: ".$this->getquantidadeProduto(). "<br>Tipo: ".$this->getTipoProduto()->getTipoProduto();
 
         return $texto;
     }
@@ -72,7 +72,7 @@ abstract class ProdutoCarrinho {
 
     public function getvalorTotal(){
 
-        $valorcalculado = $this->$valorProduto * $this->$quantidadeProduto;
+        $valorcalculado = $this->valorProduto * $this->quantidadeProduto;
 
         return $valorcalculado;
     }

@@ -6,19 +6,27 @@ class Pedido extends ProdutoCarrinho{
        //Atributos variaveis
         private $pedido;
         private $numeroPedido;
-        private $valorTotal;
+        private $frete;
  
     //Métodos
-    public function __construct($pedido, $nomeProduto, $valorProduto, $quantidadeProduto, TipoProduto $tp){
+    public function __construct($pedido, $nomeProduto, $valorProduto, $quantidadeProduto, TipoProduto $tp, $frete){
         $this->pedido = $pedido;
+        $this->frete = $frete;
         parent::__construct($nomeProduto, $valorProduto, $quantidadeProduto, $tp, $pedido);
     }
 
     public function imprimir(){
         $texto = parent::imprimir();
-        $texto .= "Valor total: ".parent::getvalorTotal();
+        $texto .= "<br>Valor total: ".$this->getvalorTotal();
 
         return $texto;
+    }
+
+    public function getvalorTotal(){
+
+        $valorcalculado = parent::getvalorTotal() + $this->frete;
+
+        return $valorcalculado;
     }
 
 

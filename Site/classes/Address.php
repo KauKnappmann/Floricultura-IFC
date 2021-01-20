@@ -42,7 +42,7 @@ class Address
     }
 
     public function imprimir(){
-        $texto = "ZIP Code: ".$this->zipCode(). "Street: ".$this->street()."Number: ".$this->number(). "District: ".$this->district()."City: ".$this->city(). "State: ".$this->state();
+        $texto = "<br>ZIP Code: ".$this->getzipCode(). "<br>Street: ".$this->getstreet()."<br>Number: ".$this->getnumber(). "<br>District: ".$this->getdistrict()."<br>City: ".$this->getcity(). "<br>State: ".$this->getstate();
         return $texto;
     }
 
