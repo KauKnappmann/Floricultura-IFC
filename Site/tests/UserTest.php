@@ -1,10 +1,11 @@
 <?php
 
-USE PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\TestCase;
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/conf/Conexao.php';
+require_once $_SERVER['DOCUMENT_ROOT']."/conf/Conexao.php";
+echo $_SERVER['DOCUMENT_ROOT'];
 
-class testeAddUser extends TestCase{
+class testeAddRemoveUser extends TestCase{
         public function CriarUser(){
             $Usuario = new usuario('TesteKauana', 'Kauana', 'kauanak21@gmail.com', 'Senha123', '2002-04-25', 
             '11111111111','feminino', '988778854');
