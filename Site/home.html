@@ -19,11 +19,49 @@
     <link rel="stylesheet" href="css/css/aos.css">
 
     <link rel="stylesheet" href="css/css/style.css">
-    <!-- <script>
-      
-      alert("Programador, não esqueça de atualizar o git");
-    
-      </script> -->
+    <link rel="stylesheet" href="../package/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <style>
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+    .texto{
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.158);
+      color:#fff;
+      text-align: center;
+      top: 100px;
+      width: 250px;
+      line-height: 30px;
+      height: 30px;
+    }
+  </style>
+  
   </head>
   <body>
   
@@ -107,12 +145,29 @@
         </div>
       </div>
     </div>
-
-    <div>
-
-      {{produtos}}
-      
+    <h3>Plantas</h3>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        {{plantas}}
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
     </div>
+  
+    <!-- Swiper JS -->
+    <script src="../package/swiper-bundle.min.js"></script>
+  
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+      });
+    </script>
     
     <footer class="site-footer custom-border-top">
       <div class="container">

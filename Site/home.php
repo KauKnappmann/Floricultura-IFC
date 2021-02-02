@@ -71,8 +71,10 @@ if (!isset($_GET['erro'])){
     $plantas_sub = "";
 
     
-    if(count($plantas)>0)
+    if(count($plantas)>0){
+
     foreach($plantas as $planta){   
+<<<<<<< Updated upstream
         $plantas_sub = $plantas_sub."<img class='fotoIcon' src='Upload/Plantas/".$planta['img']."'><br>\n";
         $plantas_sub = $plantas_sub."<h3>".$planta['nome']."</h3>\n";
         $plantas_sub = $plantas_sub."<h5>".$planta['tipo']."</h5>\n";
@@ -83,5 +85,14 @@ if (!isset($_GET['erro'])){
 
 
 //
+=======
+      
+        $plantas_sub = $plantas_sub."<div class='swiper-slide'><img style='width: 250px;height: 250px;' src='Upload/Plantas/".$planta['img']."'>";
+        $plantas_sub = $plantas_sub."<div class='texto'><h3>".$planta['nome']."</h3></div></div>\n";
+    }
+    }
+    $html = str_replace('{{plantas}}',$plantas_sub,$html);
+//header("location:index.html");
+>>>>>>> Stashed changes
 echo $html;
 ?>

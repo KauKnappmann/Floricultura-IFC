@@ -62,8 +62,8 @@ CREATE TABLE administrador(
 );
 	
 #início de inserção de dados
-
-INSERT INTO plantas(nomePlanta, tipoPlanta, img, estoquePlanta)
+DROP TABLE plantas;
+INSERT INTO plantas(nome, tipo, img, estoque)
 VALUES('Copo de Leite', 'Flor', 'copo-de-leite-3.jpg', 2),
 ('Flor do campo', 'Flor', 'flores-do-campo-1.jpg', 25),
 ('Girassol', 'Flor', 'arranjo-girassois-3.jpg', 48),
