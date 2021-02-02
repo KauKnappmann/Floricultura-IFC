@@ -54,10 +54,11 @@ CREATE TABLE compras(
 	nomePlanta VARCHAR (50),
 	formaPagamento VARCHAR(50));
   DROP TABLE  administrador;
+  
 CREATE TABLE administrador(
 	codAdmin INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    codUsuario INT,
-    FOREIGN KEY (codUsuario) REFERENCES Usuario(codUsuario)
+    codUsuario INT UNIQUE,
+    FOREIGN KEY (codUsuario) REFERENCES Usuario(cod)
 );
 	
 #início de inserção de dados
@@ -107,4 +108,4 @@ INSERT INTO compra(nomeCliente, cpfCliente, nomeProdutos, nomePlanta, formaPagam
 
 INSERT INTO administrador(CodUsuario)
 VALUES(1),
-	  (2);
+	  (5);
