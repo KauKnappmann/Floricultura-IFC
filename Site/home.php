@@ -1,3 +1,4 @@
+<link rel="icon" href="css/images/logoVerde.png" type="image/x-icon" />
 <?php
         try{
 include_once "conf/Conexao.php";
@@ -74,18 +75,6 @@ if (!isset($_GET['erro'])){
     if(count($plantas)>0){
 
     foreach($plantas as $planta){   
-<<<<<<< Updated upstream
-        $plantas_sub = $plantas_sub."<img class='fotoIcon' src='Upload/Plantas/".$planta['img']."'><br>\n";
-        $plantas_sub = $plantas_sub."<h3>".$planta['nome']."</h3>\n";
-        $plantas_sub = $plantas_sub."<h5>".$planta['tipo']."</h5>\n";
-        $plantas_sub = $plantas_sub."<a href='".$link['produto']."?planta=".$planta['cod']."'>comprar</a><br><br>\n\n";
-    }
-    
-    $html = str_replace('{{produtos}}',$plantas_sub,$html);
-
-
-//
-=======
       
         $plantas_sub = $plantas_sub."<div class='swiper-slide'><img style='width: 250px;height: 250px;' src='Upload/Plantas/".$planta['img']."'>";
         $plantas_sub = $plantas_sub."<div class='texto'><h3>".$planta['nome']."</h3></div></div>\n";
@@ -93,6 +82,5 @@ if (!isset($_GET['erro'])){
     }
     $html = str_replace('{{plantas}}',$plantas_sub,$html);
 //header("location:index.html");
->>>>>>> Stashed changes
 echo $html;
 ?>
