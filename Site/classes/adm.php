@@ -234,7 +234,7 @@ class Adm{
             case 0:
 
                 $erro = "Email ou Senha incorretos<br>
-                <br><a href='usuario/cadastro.html'>Volte e loge-se novamente</a>";
+                <br><a href='usuario/login.html'>Volte e loge-se novamente</a>";
 
             break;
 
@@ -248,7 +248,7 @@ class Adm{
             case 23000:
 
                 $erro = "email duplicado<br>
-                <br><a href='usuario/cadastro.html'>Volte e cadastre-se novamente</a>";
+                <br><a href='usuario/login.html'>Volte e logue-se novamente</a>";
 
             break;
 

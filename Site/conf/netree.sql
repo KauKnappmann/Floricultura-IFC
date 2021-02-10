@@ -23,7 +23,13 @@ CREATE TABLE Usuario(
     ALTER TABLE Usuario
     DROP COLUMN ativo;
     
-    
+UPDATE Usuario
+SET nome = 'Administrador Netree 1'
+WHERE cod = 1;
+
+UPDATE Usuario
+SET nome = 'Administrador Netree 2'
+WHERE cod = 5;
     select * from Usuario;
 
 CREATE TABLE plantas(
@@ -35,7 +41,7 @@ img VARCHAR(100),
 estoque INT
 );
 select * from plantas;
-drop table plantas;
+#drop table plantas;
 
 CREATE TABLE produtos(
 cod INT NOT NULL AUTO_INCREMENT PRIMARY KEY,

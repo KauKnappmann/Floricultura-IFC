@@ -52,6 +52,12 @@ if (!isset($_GET['erro'])){
              <li><a href="usuario/adm.php?do=compras" title="Compras">Compras</a></li>
              <li><a href="usuario/adm.php?do=usuarios" title="Usuários">Usuários</a></li>
              <li><a href="usuario/adm.php?" title="Mudas">Mudas</a></li>
+             <li class="has-children"><a href="#" title="Cadastros">Outros</a>
+             <ul class="dropdown">
+             <li><a href="produto/cadastroPlanta.html" title="Plantas">Plantas</a></li>
+             <li><a href="produto/cadastroProduto.html" title="Produtos">Produtos</a></li>
+             <li><a href="usuario/cadastro.html" title="Usuários">Usuários</a></li>
+             </ul></li>
              </ul></li>',
              $html);
         }
