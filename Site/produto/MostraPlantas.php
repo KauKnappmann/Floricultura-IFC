@@ -21,6 +21,30 @@
       alert("Programador, não esqueça de atualizar o git");
       
       </script> -->
+
+      <style>
+        .coluna{
+      float: right;
+      width: 25%;
+      }
+      .row::after {
+      content: "";
+      clear: both;
+      display: table;
+     }
+    @media screen and (max-width: 500px) {
+      .column {
+        width: 100%;
+      }
+    }
+    #mostrar{
+  display: none;
+}
+
+#passar_mouse:hover #mostrar{
+  display:block;
+  }
+      </style>
   </head>
   <body>
   
@@ -42,7 +66,7 @@
         <div class="d-flex align-items-center justify-content-between">
           <div class="logo">
             <div class="site-logo">
-              <a href="home.php" class="js-logo-clone" title="Início">NeTree</a>
+              <a href="../home.php" class="js-logo-clone" title="Início">NeTree</a>
             </div>
           </div>
           <div class="main-nav d-none d-lg-block">
@@ -76,7 +100,7 @@
     <div class="custom-border-bottom py-3">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 mb-0"><a href="home.php">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Sobre</strong></div>
+          <div class="col-md-12 mb-0"><a href="home.php">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Plantas</strong></div>
         </div>
       </div>
     </div>
@@ -89,9 +113,35 @@
         </div>
       </div>
     </div>
+    <div class="row">
+        <?php
 
-    Kauana
-
+        try{
+          include_once "../conf/Conexao.php";
+          
+          require "../classes/adm.php";
+          
+          $pdo = Conexao::getInstance();
+          $adm = new Adm($pdo);
+          }catch(Exception $e){
+              echo $e->getCode();
+          }
+          
+        $plantas = $adm->view("plantas");
+        $plantas_sub = "";
+    
+        
+        if(count($plantas)>0){
+    
+        foreach($plantas as $planta){   
+          
+           echo $plantas_sub."<div class='coluna'><div id='passar_mouse'><img style='width: 100%;height: 250px;' src='../Upload/Plantas/".$planta['img']."'>";
+           echo $plantas_sub."<div id='mostrar'<h3>".$planta['nome']."</h3></div></div></div>";
+        }
+        }
+        
+?>
+</div>
   </div>
   <footer class="site-footer custom-border-top">
     <div class="container">
