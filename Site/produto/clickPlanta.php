@@ -119,51 +119,68 @@ justify-content:center;
         </div>
       </div>
     </div>
-    <script type="text/javascript">
-$(document).ready(function() {
-        $(".coluna > .mostrar").slideUp();
-        $(".coluna > .mostrar:eq()").slideDown();
-});
-
-function opendetails(num) {
-        $(".coluna > .mostrar").slideUp();
-        $(".coluna > .mostrar:eq(" + (num) + ")").slideDown();
-}
-</script>
-    <h3>Plantas</h3>
-    <div class="row">
-        <?php
-
-        try{
-          include_once "../conf/Conexao.php";
-          
-          require "../classes/adm.php";
-          
-          $pdo = Conexao::getInstance();
-          $adm = new Adm($pdo);
-          }catch(Exception $e){
-              echo $e->getCode();
-          }
-          
-        $plantas = $adm->view("plantas");
-        $plantas_sub = "";
-    
-        
-        if(count($plantas)>0){
-    
-        foreach($plantas as $planta){   
-          
-           echo $plantas_sub."<div class='coluna'><img style='width: 80%;height: 250px;' src='../Upload/Plantas/".$planta['img']."'>";
-           echo $plantas_sub."<div id='mostrar'<h3>".$planta['nome']."</h3><form action='clickPlanta.php'><button type='submit' formaction='clickPlanta.php'>Ver mais</button></form></div></div>";
-        }
-        }
-        
-?>
-<script>
-$('.coluna').hover( function() {$('.mostrar').fadeIn('fast'); } , function() {$('.mostrar').fadeOut('fast');  }    ) ;
-</script>
+   <!-- apresenta o produtoselecionado anteriormente -->
 </div>
   </div>
+  <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="h3 mb-3 text-black">//nome do produto</h2>
+          </div>
+          <div class="col-md-7">
+
+            <form action="#" method="post">
+              
+              <div class="p-3 p-lg-5 border">
+                <div class="form-group row">
+                  <div class="col-md-6">
+                    <!-- <label for="c_fname" class="text-black">//Imagem <span class="text-danger">*</span></label> -->
+                    <img src="https://developer.mozilla.org/static/img/favicon144.png" alt="MDN logo">
+                  </div>
+                </div>
+                
+              </div>
+            </form>
+          </div>
+          <div class="col-md-5 ml-auto">
+            <div class="p-4 border mb-3">
+              <span class="d-block text-primary h6 text-uppercase">Especificações</span>
+              <p class="mb-0">//tipo de planta</p>
+              <p class="mb-0">//valor unitário da planta</p>
+              <div class="input-group mb-3" style="max-width: 120px;">
+                        <div class="input-group-prepend">
+                          <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
+                        </div>
+                        <input type="text" class="form-control text-center" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
+                        </div>
+                      </div>
+                      
+            </div>
+<script>
+    	var sitePlusMinus = function() {
+		$('.js-btn-minus').on('click', function(e){
+			e.preventDefault();
+			if ( $(this).closest('.input-group').find('.form-control').val() != 0  ) {
+				$(this).closest('.input-group').find('.form-control').val(parseInt($(this).closest('.input-group').find('.form-control').val()) - 1);
+			} else {
+				$(this).closest('.input-group').find('.form-control').val(parseInt(0));
+			}
+		});
+		$('.js-btn-plus').on('click', function(e){
+			e.preventDefault();
+			$(this).closest('.input-group').find('.form-control').val(parseInt($(this).closest('.input-group').find('.form-control').val()) + 1);
+		});
+	};
+	sitePlusMinus();
+</script>
+
+          </div>
+        </div>
+      </div>
+    </div>
   <footer class="site-footer custom-border-top">
     <div class="container">
       <div class="row pt-5 mt-5 text-center">
@@ -177,15 +194,15 @@ $('.coluna').hover( function() {$('.mostrar').fadeIn('fast'); } , function() {$(
   </footer>
 
 
-  <script src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/jquery-ui.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
+  <script src="../css/js/jquery-3.3.1.min.js"></script>
+  <script src="../css/js/jquery-ui.js"></script>
+  <script src="../css/js/popper.min.js"></script>
+  <script src="../css/js/bootstrap.min.js"></script>
+  <script src="../css/js/owl.carousel.min.js"></script>
+  <script src="../css/js/jquery.magnific-popup.min.js"></script>
+  <script src="../css/js/aos.js"></script>
 
-  <script src="js/main.js"></script>
+  <script src="../css/js/main.js"></script>
     
   </body>
 </html>
