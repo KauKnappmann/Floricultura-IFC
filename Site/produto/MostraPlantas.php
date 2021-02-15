@@ -24,8 +24,9 @@
 
       <style>
         .coluna{
-      float: right;
-      width: 25%;
+       float: right;
+      width: 25%; /* aqui ta a configuração pra aparecer 4 imagens por linha, se quiser 3, tem que esq=crever 33.33% */
+      text-align: center;
       }
       .row::after {
       content: "";
@@ -37,13 +38,18 @@
         width: 100%;
       }
     }
-    #mostrar{
-  display: none;
+
+.coluna:hover #mostrar {
+
+background-color:black;
+opacity:0.4;
+width:100%;
+height:100%;
+   display:flex;
+  justify-content:center;
+
 }
 
-#passar_mouse:hover #mostrar{
-  display:block;
-  }
       </style>
   </head>
   <body>
@@ -75,7 +81,7 @@
                 <li class="has-children ">
                   <a href="home.php" title="Produtos">Produtos</a>
                   <ul class="dropdown">
-                    <li><a href="MostraPlantas.html" title="Plantas">Plantas</a></li>
+                    <li><a href="MostraPlantas.php" title="Plantas">Plantas</a></li>
                     <li><a href="#" title="Outros">Outros</a></li>
                   </ul>
                 </li>
@@ -113,6 +119,7 @@
         </div>
       </div>
     </div>
+    <h3>Plantas</h3>
     <div class="row">
         <?php
 
@@ -135,12 +142,15 @@
     
         foreach($plantas as $planta){   
           
-           echo $plantas_sub."<div class='coluna'><div id='passar_mouse'><img style='width: 100%;height: 250px;' src='../Upload/Plantas/".$planta['img']."'>";
-           echo $plantas_sub."<div id='mostrar'<h3>".$planta['nome']."</h3></div></div></div>";
+           echo $plantas_sub."<div class='coluna'><img style='width: 80%;height: 250px;' src='../Upload/Plantas/".$planta['img']."'>";
+           echo $plantas_sub."<div id='mostrar'<h3>".$planta['nome']."</h3></div></div>";
         }
         }
         
 ?>
+<script>
+$('.coluna').hover( function() {$('.mostrar').fadeIn('fast'); } , function() {$('.mostrar').fadeOut('fast');  }    ) ;
+</script>
 </div>
   </div>
   <footer class="site-footer custom-border-top">
