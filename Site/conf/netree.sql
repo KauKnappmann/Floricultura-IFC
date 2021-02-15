@@ -51,6 +51,8 @@ tipo VARCHAR(50),
 valor double,
 img VARCHAR(100));
 drop table produtos;
+SELECT * FROM produtos;
+
 drop table compras;
 CREATE TABLE compras(
 	cod INT NOT NULL AUTO_INCREMENT PRIMARY KEY,

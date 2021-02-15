@@ -71,7 +71,8 @@ if (!isset($_GET['erro'])){
  echo $adm->mensagemErro($_GET['erro']);
 
 
-
+?>
+<?php
 
  //CATALOGO
     $plantas = $adm->view("plantas");
@@ -82,8 +83,8 @@ if (!isset($_GET['erro'])){
 
     foreach($plantas as $planta){   
       
-        $plantas_sub = $plantas_sub."<div class='swiper-slide'><img style='width: 250px;height: 250px;' src='Upload/Plantas/".$planta['img']."'>";
-        $plantas_sub = $plantas_sub."<div class='texto'><h3>".$planta['nome']."</h3></div></div>\n";
+        $plantas_sub = $plantas_sub."<div class='carousel-item active'><div class='col-md-4'><div class='card card-body'><img class='img-fluid' style='width: 250px;height: 250px;' src='Upload/Plantas/".$planta['img']."'></div></div></div>";
+        // $plantas_sub = $plantas_sub."<h3>".$planta['nome']."</h3>\n";
     }
     }
     $html = str_replace('{{plantas}}',$plantas_sub,$html);
