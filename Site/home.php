@@ -86,9 +86,9 @@ if (!isset($_GET['erro'])){
       
         $plantas_sub = $plantas_sub."<div class='item'><div class='item-entry'><a href='#' class='product-item md-height bg-gray d-block'><img style='width: 250px;height: 250px;' src='Upload/Plantas/".$planta['img']."' alt='Image' class='img-fluid'></a>";
         $plantas_sub = $plantas_sub."<h2 class='item-title'><a href='#'>".$planta['nome']."</a></h2>";
-        $plantas_sub = $plantas_sub."<strong class='item-price'>R$".$planta['valor']."</strong><div class='star-rating'><span class='icon-star2 text-warning'></span><span class='icon-star2 text-warning'></span>
-        <span class='icon-star2 text-warning'></span><span class='icon-star2 text-warning'></span>
-        <span class='icon-star2 text-warning'></span></div></div></div></div>";
+        $plantas_sub = $plantas_sub."<strong class='item-price'>R$".$planta['valor']."</strong> 
+       </div></div>";
+        $plantas_sub = $plantas_sub."<h1>OLHA PRA MIM TO AQUI</h1>";
     }
     }
     $html = str_replace('{{plantas}}',$plantas_sub,$html);
