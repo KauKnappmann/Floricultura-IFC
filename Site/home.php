@@ -72,6 +72,7 @@ if (!isset($_GET['erro'])){
 
 
 ?>
+
 <?php
 
  //CATALOGO
@@ -82,9 +83,9 @@ if (!isset($_GET['erro'])){
     if(count($plantas)>0){
 
     foreach($plantas as $planta){   
-      
-        $plantas_sub = $plantas_sub."<div class='carousel-item active'><div class='col-md-4'><div class='card card-body'><img class='img-fluid' style='width: 250px;height: 250px;' src='Upload/Plantas/".$planta['img']."'></div></div></div>";
-        // $plantas_sub = $plantas_sub."<h3>".$planta['nome']."</h3>\n";
+      //preciso fazer com que a primeira imagem tenha esse class active mas as demais não
+        $plantas_sub = $plantas_sub."<div class='carousel-item active'><img class='d-block col-3 img-fluid' style='width: 250px;height: 250px;' src='Upload/Plantas/".$planta['img']."'>";
+        $plantas_sub = $plantas_sub."<h3>".$planta['nome']."</h3></div>";
     }
     }
     $html = str_replace('{{plantas}}',$plantas_sub,$html);
