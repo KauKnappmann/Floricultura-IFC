@@ -23,33 +23,7 @@
       </script> -->
 
       <style>
-        .coluna{
-       float: right;
-      width: 25%; /* aqui ta a configuração pra aparecer 4 imagens por linha, se quiser 3, tem que esq=crever 33.33% */
-      text-align: center;
-      }
-      .row::after {
-      content: "";
-      clear: both;
-      display: table;
-     }
-    @media screen and (max-width: 500px) {
-      .column {
-        width: 100%;
-      }
-    }
-
-.coluna:hover #mostrar {
-
-background-color:black;
-opacity:0.4;
-width:100%;
-height:100%;
-display:flex;
-justify-content:center;
-
-}
-
+ 
       </style>
   </head>
   <body>
@@ -119,17 +93,7 @@ justify-content:center;
         </div>
       </div>
     </div>
-    <script type="text/javascript">
-$(document).ready(function() {
-        $(".coluna > .mostrar").slideUp();
-        $(".coluna > .mostrar:eq()").slideDown();
-});
-
-function opendetails(num) {
-        $(".coluna > .mostrar").slideUp();
-        $(".coluna > .mostrar:eq(" + (num) + ")").slideDown();
-}
-</script>
+   
     <h3>Plantas</h3>
     <div class="row">
         <?php
@@ -159,9 +123,7 @@ function opendetails(num) {
         }
         
 ?>
-<script>
-$('.coluna').hover( function() {$('.mostrar').fadeIn('fast'); } , function() {$('.mostrar').fadeOut('fast');  }    ) ;
-</script>
+
 </div>
   </div>
   <footer class="site-footer custom-border-top">
