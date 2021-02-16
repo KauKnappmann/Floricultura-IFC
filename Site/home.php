@@ -84,7 +84,7 @@ if (!isset($_GET['erro'])){
 
     foreach($plantas as $planta){   
         
-        $plantas_sub = $plantas_sub."<div class='item'><div class='item-entry'><a href='#' class='product-item md-height bg-gray d-block'><img src='Upload/Plantas/".$planta['img']."' alt='Image' class='img-fluid'></a>";
+        $plantas_sub = $plantas_sub."<div class='item'><div class='item-entry'><a href='#' class='product-item md-height bg-gray d-block'><img style='width: 250px;height: 250px;' src='Upload/Plantas/".$planta['img']."' alt='Image' class='img-fluid'></a>";
         $plantas_sub = $plantas_sub."<h2 class='item-title'><a href='#'>".$planta['nome']."</a></h2>";
         $plantas_sub = $plantas_sub."<strong class='item-price'>R$".$planta['valor']."</strong> 
        </div></div>\n \n";
