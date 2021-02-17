@@ -1,6 +1,10 @@
 <?php
 
-require_once 'Email.php';
+namespace classes\user;
+
+use classes\user\Email;
+
+require_once '../../vendor/autoload.php';
 
 class RecoverPassword
 {

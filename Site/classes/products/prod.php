@@ -1,18 +1,15 @@
 <?php 
 
-    include_once "../../conf/Conexao.php";
+   use classes\user\Adm;
 
-    require "../adm.php";
+   include_once "../../conf/Conexao.php";
 
-    $adm = new Adm(Conexao::getInstance());
+   require_once "../../vendor/autoload.php";
 
-   } catch(Exception $e){
-      echo "Erro: ". $e->getMessage();
-     }
+   $adm = new Adm(Conexao::getInstance());
 
-     $do = isset($_POST['doit']) ? $_POST['doit'] : 0;
+   $do = isset($_POST['doit']) ? $_POST['doit'] : 0;
 
-        $link = "location:../../home.php";
+   $link = "location:../../home.php";
 
-      
 ?>

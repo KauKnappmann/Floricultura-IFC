@@ -1,0 +1,23 @@
+{
+    "name": "kananak/floricultura-ifc",
+    "description": "Web Site para venda de Flores e Plantas",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alessandra, Camila, Diógenes, Hanattan, Kauana, Maria, Mateus",
+            "email": "cam.nsc007@gmail.com"
+        }
+    ],
+    "config": {
+        "vendor-dir": "vendor"
+    },
+    "autoload": {
+        "psr-4": {
+            "classes\\": "classes/"
+        },
+        "require":{
+            "phpmailer/phpmailer": "6.0.*"
+        }
+    }
+}

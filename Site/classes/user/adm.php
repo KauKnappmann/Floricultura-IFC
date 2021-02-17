@@ -1,5 +1,9 @@
 <?php 
 
+namespace classes\user;
+use PDO;
+use Exception;
+
 class Adm{
 
     function  __construct($pdo){
@@ -238,7 +242,7 @@ class Adm{
             case 0:
 
                 $erro = "Email ou Senha incorretos<br>
-                <br><a href='usuario/login.html'>Volte e loge-se novamente</a>";
+                <br><a href='usuario/login.html'>Volte e logue-se novamente</a>";
 
             break;
 

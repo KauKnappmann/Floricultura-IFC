@@ -1,15 +1,17 @@
 <link rel="icon" href="css/images/logoVerde.png" type="image/x-icon" />
 <?php
-        try{
-include_once "conf/Conexao.php";
 
-require "classes/adm.php";
+use classes\user\Adm;
 
-$pdo = Conexao::getInstance();
-$adm = new Adm($pdo);
-}catch(Exception $e){
-    echo $e->getCode();
-}
+    try {
+        include_once "conf/Conexao.php";
+        require_once "vendor/autoload.php";
+
+        $pdo = Conexao::getInstance();
+        $adm = new Adm($pdo);
+        } catch(Exception $e){
+            echo $e->getCode();
+    }
 
 
 $html = file_get_contents("home.html");

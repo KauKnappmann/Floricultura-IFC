@@ -1,13 +1,12 @@
 <?php declare(strict_types=1);
 
+namespace classes\user;
+
 use phpDocumentor\Reflection\Types\Boolean;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'PHPMailer/src/Exception.php';
-require 'PHPMailer/src/PHPMailer.php';
-require 'PHPMailer/src/SMTP.php';
-
+require_once '../../vendor/autoload.php';
 class Email
 {
     private $email;

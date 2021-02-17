@@ -1,10 +1,11 @@
 <?php 
+
+use classes\user\Adm;
+
 try{
     include_once "../../conf/Conexao.php";
 
-    require "../adm.php";
-     
-  
+    require_once "../../vendor/autoload.php";
 
      $adm = new Adm(Conexao::getInstance());
 
