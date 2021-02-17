@@ -85,7 +85,7 @@
     <div class="custom-border-bottom py-3">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 mb-0"><a href="../home.php">Home</a> <span class="mx-2 mb-0">/</span><span class="mx-2 mb-0">administrador</span> <span class="mx-2 mb-0">/</span> <a href="RegistrosPlantas.php">Registros de Plantas</a></div>
+          <div class="col-md-12 mb-0"><a href="../home.php">Home</a> <span class="mx-2 mb-0">/</span><span class="mx-2 mb-0">administrador</span> <span class="mx-2 mb-0">/</span> <a href="RegistrosProdutos.php">Registros de Produtos</a></div>
         </div>
       </div>
     </div>
@@ -101,7 +101,7 @@
     <br>
     <center>
       <h3 class="text-uppercase">
-        Plantas cadastradas
+        Produtos cadastrados
       </h3>
       </center>
     <div class="row">
