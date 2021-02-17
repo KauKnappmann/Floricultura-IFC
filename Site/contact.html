@@ -93,41 +93,41 @@
           </div>
           <div class="col-md-7">
 
-            <form action="#" method="post">
+            <form action="enviar.php" method="post">
               
               <div class="p-3 p-lg-5 border">
                 <div class="form-group row">
                   <div class="col-md-6">
                     <label for="c_fname" class="text-black">Primeiro nome <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="c_fname" name="c_fname">
+                    <input type="text" class="form-control" id="name" name="name">
                   </div>
                   <div class="col-md-6">
                     <label for="c_lname" class="text-black">Último nome <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="c_lname" name="c_lname">
+                    <input type="text" class="form-control" id="lastname" name="lastname">
                   </div>
                 </div>
                 <div class="form-group row">
                   <div class="col-md-12">
                     <label for="c_email" class="text-black">E-mail <span class="text-danger">*</span></label>
-                    <input type="email" class="form-control" id="c_email" name="c_email" placeholder="">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="">
                   </div>
                 </div>
                 <div class="form-group row">
                   <div class="col-md-12">
                     <label for="c_subject" class="text-black">Sujeito </label>
-                    <input type="text" class="form-control" id="c_subject" name="c_subject">
+                    <input type="text" class="form-control" id="subject" name="subject">
                   </div>
                 </div>
 
                 <div class="form-group row">
                   <div class="col-md-12">
                     <label for="c_message" class="text-black">Messagem </label>
-                    <textarea name="c_message" id="c_message" cols="30" rows="7" class="form-control"></textarea>
+                    <textarea name="message" id="message" cols="30" rows="7" class="form-control"></textarea>
                   </div>
                 </div>
                 <div class="form-group row">
                   <div class="col-lg-12">
-                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Enviar Mensagem">
+                    <button type="button" class="btn btn-primary btn-lg btn-block" OnClick="sendToPHP_AJAX()">ENVIAR MENSAGEM</button>
                   </div>
                 </div>
               </div>
@@ -190,8 +190,40 @@
   <script src="js/owl.carousel.min.js"></script>
   <script src="js/jquery.magnific-popup.min.js"></script>
   <script src="js/aos.js"></script>
-
   <script src="js/main.js"></script>
+  <script>
+    function sendToPHP_AJAX(){
+        let name = document.getElementById("name").value;
+        let lastname = document.getElementById("lastname").value;
+        let email = document.getElementById("email").value;
+        let subject = document.getElementById("subject").value;
+        let message = document.getElementById("message").value;
+        let path = 'enviar.php'; //arquivo php que ele irá fazer a requisição ajax.
+        let AJAX = new XMLHttpRequest();
+        AJAX.onreadystatechange = function(){
+                                    console.log(this.readyState);
+                                    console.log(this.status);
+                                    console.log(this.response);
+                                    if (this.readyState == 4 && this.status == 200){
+                                        phpResponse_AJAX(this.responseText); //função que ele chamará quando o php retornar um valor.
+                                    }
+                                };
+        AJAX.open("POST", path, true);
+        AJAX.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        AJAX.send("name="+name+"&lastname="+lastname+"&email="+email+"&subject="+subject+"&message="+message);
+    }
+
+    function phpResponse_AJAX(returnedData){
+        //returnedData é o retorno d php, ou seja, tudo que o php der "ECHO" retornará nesta variavel.
+        alert(returnedData);
+
+        name.value = "";
+        lastname.value = "";
+        email.value = "";
+        subject.value = "";
+        message.value = "";
+    }
+</script>
     
   </body>
 </html>
