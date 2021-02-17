@@ -28,6 +28,7 @@
   text-align: center;
   margin-top: 0.5cm;
 }
+
       </style>
   </head>
   <body>
@@ -97,8 +98,12 @@
         </div>
       </div>
     </div>
-   
-    <h3>Plantas</h3>
+    <br>
+    <center>
+      <h3 class="text-uppercase">
+        Plantas
+      </h3>
+      </center>
     <div class="row">
         <?php
 
@@ -121,9 +126,10 @@
     
         foreach($plantas as $planta){   
           
-           echo $plantas_sub."<div class='quatro'><img style='width: 250px;height: 250px;' src='../Upload/Plantas/".$planta['img']."'>";
-           echo $plantas_sub."<h6 class='item-title'>".$planta['nome']."</h6><form action='clickPlanta.php'><button class='btn btn-outline-primary' type='submit' formaction='clickPlanta.php'>Ver mais</button></form></div>";
-        }
+           echo $plantas_sub."<div class='quatro'><img style='width: 200px;height: 200px;' src='../Upload/Plantas/".$planta['img']."'>";
+           echo $plantas_sub."<b><h6>".$planta['tipo']."</b><br>".$planta['nome']."<p style='color: red;'>R$ ".$planta['valor']."</p><form action='prodInfo.html'><button class='btn-sm btn-outline-primary' 
+           style='width: 60%;' type='submit' formaction='prodInfo.html'>Comprar</button></form></h6></div>";
+          }
         }
         
 ?>
