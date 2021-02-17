@@ -13,7 +13,7 @@ class Adm{
 
         $stmt = $this->pdo->prepare($sql); 
         $stmt->bindParam(":email", $email, PDO::PARAM_STR); 
-        $stmt->bindParam(":senha", $senha, PDO::PARAM_STR); 
+        $stmt->bindParam(":senha", $this->hashPassword($senha), PDO::PARAM_STR); 
         $stmt->execute();
 
         $login = $stmt->fetchAll();
@@ -97,6 +97,10 @@ class Adm{
           return $e->getMessage();
         }
 
+    }
+
+    public function hashPassword($senha){
+        return hash("sha512", $senha);
     }
 
 //função para visualização geral de tabelas

@@ -29,6 +29,7 @@ try{
             $info[$name] = $value;
             
          $info['img'] = $_FILES['imagem']['name'];
+         $info['senha'] = $adm->hashPassword($info['senha']);
          
          //var_dump($info);
          
