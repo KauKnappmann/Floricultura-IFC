@@ -50,9 +50,13 @@ if (!isset($_GET['erro'])){
              '<li class="has-children "><a href="usuario/adm.html" title="Administrar">Administrar</a>
              <ul class="dropdown">
              <li><a href="usuario/adm.php?do=compras" title="Compras">Compras</a></li>
-             <li><a href="usuario/adm.php?do=usuarios" title="Usuários">Usuários</a></li>
-             <li><a href="usuario/adm.php?" title="Mudas">Mudas</a></li>
-             <li class="has-children"><a href="#" title="Cadastros">Outros</a>
+             <li><a href="usuario/usuarios.php" title="Usuários">Usuários</a></li>
+             <li class="has-children"><a href="#" title="Estoque">Outros</a>
+             <ul class="dropdown">
+             <li><a href="produto/RegistrosPlantas.php" title="Plantas">Plantas</a></li>
+             <li><a href="produto/RegistrosProdutos.php" title="Produtos">Produtos</a></li>
+             </ul></li>
+             <li class="has-children"><a href="#" title="Cadastros">Cadastros</a>
              <ul class="dropdown">
              <li><a href="produto/cadastroPlanta.html" title="Plantas">Plantas</a></li>
              <li><a href="produto/cadastroProduto.html" title="Produtos">Produtos</a></li>
