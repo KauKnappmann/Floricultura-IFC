@@ -21,6 +21,15 @@
       alert("Programador, não esqueça de atualizar o git");
       
       </script> -->
+
+      <style>
+.quatro {
+  width:25%;
+  text-align: center;
+  margin-top: 0.5cm;
+}
+
+      </style>
   </head>
   <body>
   
@@ -42,17 +51,17 @@
         <div class="d-flex align-items-center justify-content-between">
           <div class="logo">
             <div class="site-logo">
-              <a href="home.php" class="js-logo-clone" title="Início">NeTree</a>
+              <a href="../home.php" class="js-logo-clone" title="Início">NeTree</a>
             </div>
           </div>
           <div class="main-nav d-none d-lg-block">
             <nav class="site-navigation text-right text-md-center" role="navigation">
               <ul class="site-menu js-clone-nav d-none d-lg-block">
                 <li class="has-children ">
-                  <a href="home.php" title="Produtos">Produtos</a>
+                  <a href="../home.php" title="Produtos">Produtos</a>
                   <ul class="dropdown">
-                    <li><a href="MostraPlantas.html" title="Plantas">Plantas</a></li>
-                    <li><a href="#" title="Outros">Outros</a></li>
+                    <li><a href="MostraPlantas.php" title="Plantas">Plantas</a></li>
+                    <li><a href="MostraProdutos.php" title="Outros">Outros</a></li>
                   </ul>
                 </li>
                 <li><a href="../contact.html" title="Contato">Contato</a></li>
@@ -76,7 +85,7 @@
     <div class="custom-border-bottom py-3">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 mb-0"><a href="home.php">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Sobre</strong></div>
+          <div class="col-md-12 mb-0"><a href="home.php">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Produtos</strong></div>
         </div>
       </div>
     </div>
@@ -89,9 +98,43 @@
         </div>
       </div>
     </div>
+    <br>
+    <center>
+      <h3 class="text-uppercase">
+        Produtos
+      </h3>
+      </center>
+    <div class="row">
+        <?php
 
-    Kauana
+        try{
+          include_once "../conf/Conexao.php";
+          
+          require "../classes/adm.php";
+          
+          $pdo = Conexao::getInstance();
+          $adm = new Adm($pdo);
+          }catch(Exception $e){
+              echo $e->getCode();
+          }
+          
+        $produtos = $adm->view("produtos");
+        $produtos_sub = "";
+    
+        
+        if(count($produtos)>0){
+    
+        foreach($produtos as $produto){   
+          
+           echo $produtos_sub."<div class='quatro'><img style='width: 200px;height: 200px;' src='../Upload/produtos/".$produto['img']."'>";
+           echo $produtos_sub."<b><h6>".$produto['tipo']."</b><br>".$produto['nome']."<p style='color: red;'>R$ ".$produto['valor']."</p><form action='prodInfo.html'><button class='btn-sm btn-outline-primary' 
+           style='width: 60%;' type='submit' formaction='prodInfo.html'>Comprar</button></form></h6></div>";
+          }
+        }
+        
+?>
 
+</div>
   </div>
   <footer class="site-footer custom-border-top">
     <div class="container">
@@ -106,15 +149,14 @@
   </footer>
 
 
-  <script src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/jquery-ui.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
+  <script src="../css/js/jquery-3.3.1.min.js"></script>
+  <script src="../css/js/jquery-ui.js"></script>
+  <script src="../css/js/popper.min.js"></script>
+  <script src="../css/js/bootstrap.min.js"></script>
+  <script src="../css/js/owl.carousel.min.js"></script>
+  <script src="../css/js/jquery.magnific-popup.min.js"></script>
+  <script src="../css/js/aos.js"></script>
 
-  <script src="js/main.js"></script>
-    
+  <script src="../css/js/main.js"></script>
   </body>
 </html>
