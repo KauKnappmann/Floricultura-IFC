@@ -916,13 +916,13 @@ a {
     background: #f9f9f9; }
   .product-item.sm-height {
     height: 300px;
-    padding: 20px; }
+    padding: 40px; }
   .product-item.md-height {
-    height: 300px;
-    padding: 20px; }
+    height: 400px;
+    padding: 40px; }
   .product-item img {
     left: 50%;
-    top: 7%;
+    top: 15%;
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
@@ -932,7 +932,7 @@ a {
     position: absolute; }
 
 .item-entry .product-item {
-  margin-bottom: 10px; }
+  margin-bottom: 30px; }
 
 .item-entry .item-title {
   font-size: 18px;

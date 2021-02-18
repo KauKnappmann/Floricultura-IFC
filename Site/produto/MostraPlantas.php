@@ -61,7 +61,7 @@
                   <a href="home.php" title="Produtos">Produtos</a>
                   <ul class="dropdown">
                     <li><a href="MostraPlantas.php" title="Plantas">Plantas</a></li>
-                    <li><a href="MostraProdutos.php" title="Outros">Outros</a></li>
+                    <li><a href="#" title="Outros">Outros</a></li>
                   </ul>
                 </li>
                 <li><a href="../contact.html" title="Contato">Contato</a></li>
