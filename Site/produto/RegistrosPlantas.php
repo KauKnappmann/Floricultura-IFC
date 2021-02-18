@@ -126,7 +126,7 @@
         try{
           include_once "../conf/Conexao.php";
           
-          require_once "vendor/autoload.php";
+          require_once "../vendor/autoload.php";
           
           $pdo = Conexao::getInstance();
           $adm = new Adm($pdo);
@@ -145,8 +145,8 @@
            echo $planta_sub."<tr><th scope='row'>".$Planta['cod']."</th><td>".$Planta['nome']."</td>
            <td>".$Planta['tipo']."</td><td>".$Planta['valor']."</td><td>".$Planta['estoque']."</td>
            <td><img style='width: 50px;height: 50px;' src='../Upload/Plantas/".$Planta['img']."'></td>
-           <td><form action='..//classes/adm.php'><button class='btn-sm btn-outline-primary' type='submit' formaction='..//classes/adm.php'>#</button></form></td>
-           <td><form action='..//classes/adm.php'><button class='btn-sm btn-outline-primary' type='submit' formaction='..//classes/adm.php'>X</button></form></td>
+           <td><form action='../classes/user/adm.php'><button class='btn-sm btn-outline-primary' type='submit' formaction='../classes/user/adm.php'>#</button></form></td>
+           <td><form action='../classes/user/adm.php'><button class='btn-sm btn-outline-primary' type='submit' formaction='../classes/user/adm.php'>X</button></form></td>
          </tr>";
           }
         }
