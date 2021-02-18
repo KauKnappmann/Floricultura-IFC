@@ -121,10 +121,12 @@
   <tbody>
         <?php
 
+        use classes\user\Adm;
+
         try{
           include_once "../conf/Conexao.php";
           
-          require "../classes/adm.php";
+          require_once "vendor/autoload.php";
           
           $pdo = Conexao::getInstance();
           $adm = new Adm($pdo);

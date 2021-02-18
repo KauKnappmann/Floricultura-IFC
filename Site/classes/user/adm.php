@@ -4,6 +4,8 @@ namespace classes\user;
 use PDO;
 use Exception;
 
+// require_once "../../vendor/autoload.php";
+
 class Adm{
 
     function  __construct($pdo){
